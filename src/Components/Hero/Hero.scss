@@ -1,0 +1,77 @@
+@import "../../styles/Responsive.scss";
+
+.hero{
+    height: 700px;
+    position: relative;
+    .modal{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 700px;
+        background: #00000055;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+
+        h1{
+            font-size: 4rem;
+            width: 800px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        p{
+            font-size: 20px;
+            margin-bottom: 2rem;
+        }
+         
+
+        button{
+            padding: 1rem 1.5rem;
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            transition: .2s;
+
+            &:hover{
+                transform: translateY(-5px);
+            }
+        }
+
+        .navigateBtns{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .navBtn{
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: 3px solid #fff;
+                transition: .2s;
+
+                &:hover{
+
+                    background: #fff;
+                }
+                
+                &.active{
+                    background: #fff;
+                    width: 22px;
+                height: 22px;
+                }
+            }
+        }
+    }
+
+    .displayImage{
+        width: 100%;
+        height: 100%;
+    }
+}

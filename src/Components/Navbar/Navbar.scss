@@ -1,0 +1,152 @@
+@import "../../styles/Responsive.scss";
+
+.navbar {
+  color: #333;
+  .top {
+    background: linear-gradient(90deg, #206ca0 1%, #00d4ff 100%);
+
+    padding: 1rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 16px;
+      cursor: pointer;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .socials {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .vl {
+        height: 25px;
+        width: 1px;
+        background: #555;
+      }
+
+      .email {
+        color: #fff;
+        font-size: 13px;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      cursor: pointer;
+
+      p {
+        font-size: 13px;
+        color: #fff;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 8%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 40px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin-left: -1rem;
+        text-transform: uppercase;
+        color: #00d4ff;
+        text-shadow: 0 0 2px black;
+        span {
+          font-size: 22px;
+          font-family: "MADE TOMMY Outline", sans-serif;
+          color: #156295;
+          text-shadow: none;
+        }
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      li {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        cursor: pointer;
+        padding-block: 1.3rem;
+        transition: .1s;
+
+        &:hover{
+            color: #00d4ff;
+        }
+
+        img {
+          width: 12px;
+          margin-left: 0.4rem;
+        }
+
+        a {
+          color: #333;
+
+          transition: .3s;
+
+          &:hover{
+              color: #00d4ff;
+          }
+        }
+
+        &.properties {
+          position: relative;
+
+          .pLists {
+            position: absolute;
+            top: 7.8rem;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background: #fff;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 10;
+
+            li {
+              font-size: 11px;
+              padding-block: 0;
+            }
+          }
+
+          &:hover {
+            .pLists {
+              top: 3.5rem;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+}
