@@ -48,8 +48,8 @@ const Featured = () => {
                 </div>
 
                 <div className="location">
+                    <img src="https://img.icons8.com/ios-filled/100/333333/marker.png" alt="marker"/>
                     <span>{item.location}</span>
-                    <img src="https://img.icons8.com/ios-filled/100/000000/marker.png" alt="marker"/>
                 </div>
 
                 <h3>₦{item.price}</h3>

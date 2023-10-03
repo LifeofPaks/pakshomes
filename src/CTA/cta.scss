@@ -1,14 +1,15 @@
 @import './../styles/Responsive.scss';
 
-.cta{
+.ctaction{
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    // background: url('./../assets/Images/bg1.jpeg') no-repeat ;
-    background-size: cover;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: hidden;
 
     .container{
+        width: 50vh;
+        margin: auto;
         h1{
             color: #206ca0;
             font-size: 20px;
@@ -23,6 +24,7 @@
                 font-size: 11px;
                 letter-spacing: 2px;
                 text-transform: uppercase;
+                margin-bottom: 0.5rem;
             }
 
             .inputWrapper{
@@ -67,14 +69,25 @@
                 text-transform: uppercase;
                 font-size: 10px;
                 letter-spacing: 2px;
-                margin-bottom: 1rem;
                 font-weight:600;
                 margin-top: 1rem;
+            }
+
+            .guest{
+                height: 45px;
+                width: 350px;
+                background: #000;
+                text-transform: uppercase;
+                font-size: 10px;
+                letter-spacing: 2px;
+                font-weight:600;
+                color: #fff;
             }
         }
 
         p{
             font-size: 13px;
+            margin-top: 0.5rem;
 
             a{
                 color: #206ca0;
@@ -82,6 +95,56 @@
                 font-size: 14px;
                 letter-spacing: 1px;
             }
+        }
+    }
+
+    .exec{
+        height: 100%;
+        position: relative;
+
+        .modal{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: #00000091;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p{
+                width: 500px;
+                padding: 2rem;
+                backdrop-filter: blur(2px);
+                background: #ffffff40;
+                color: #fff;
+                text-shadow: 0 0 2px black;
+                line-height: 25px;
+
+                span{
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    font-weight: bold;
+                    
+                }
+            }
+        }
+
+        .bg{
+            width:700px;
+            height: 100%;
+        }
+
+        .logo{
+            position: absolute;
+            left: 2rem;
+            top: 2rem;
+            backdrop-filter: blur(2px);
+            background: #ffffffa7;
+            padding: 10px;
+            border-radius: 4px;
         }
     }
 }

@@ -46,7 +46,10 @@
 
       .ctaWrapper{
         position: relative;
+
+
         .profile{
+            position: relative;
             display: flex;
             align-items: center;
             gap: .2rem;
@@ -61,6 +64,17 @@
             .avatar{
                 width: 25px;
                 border-radius: 50%;
+              }
+
+              .onlineStatus{
+                width: 8px;
+                height: 8px;
+                border: .5px solid #fff;
+                background: rgb(2, 159, 2);
+                border-radius: 50%;
+                position: absolute;
+                right: .4rem;
+                top: .4rem;
               }
         }  
         

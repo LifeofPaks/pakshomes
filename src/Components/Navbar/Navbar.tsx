@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
-import Avatar from "../../assets/Images/emptyImg.webp";
 
 const Navbar = () => {
   const [showCTA, setShowCTA] = useState(false);
 
   return (
-    <div className="navbar">
-      <div className="top">
+    <nav className="navbar">
+      <section className="top">
         <div className="left">
           <div className="socials">
             <img
@@ -44,6 +43,7 @@ const Navbar = () => {
           </div>
 
           <div className="ctaWrapper" onClick={() => setShowCTA(!showCTA)}>
+           
             <div className="profile">
               <img
                 src="https://img.icons8.com/material-rounded/48/ffffff/thumbnails.png"
@@ -54,6 +54,7 @@ const Navbar = () => {
                 src="https://img.icons8.com/windows/64/ffffff/user-male-circle.png"
                 alt="user-male-circle"
               />
+              <div className="onlineStatus"></div>
             </div>
 
 
@@ -71,15 +72,15 @@ const Navbar = () => {
                     src="https://img.icons8.com/ios-filled/100/333333/login-rounded-right.png"
                     alt="login-rounded-right"
                   />
-                  <Link to="/signin">Log in</Link>
+                  <Link to="/login">Log in</Link>
                 </div>
               </div>
 
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="bottom">
+      <section className="bottom">
         <div className="logo">
           <img
             src="https://img.icons8.com/ios-filled/100/206ca0/dynamics-365.png"
@@ -122,8 +123,8 @@ const Navbar = () => {
             <Link to="">Contact</Link>
           </li>
         </ul>
-      </div>
-    </div>
+      </section>
+    </nav>
   );
 };
 
