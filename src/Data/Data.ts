@@ -130,3 +130,66 @@ export const featuredData = [
 
     },
 ]
+
+export const exploreData = [
+    {
+        id : 1,
+        location: 'Lekki, Lagos',
+        image : 'https://i.pinimg.com/564x/2b/dc/8f/2bdc8f2846ef01f657f176d78c4eb2d2.jpg',
+    },
+
+    {
+        id : 2,
+        location: 'Banana Island, Lagos',
+        image : 'https://i.pinimg.com/564x/cb/ef/ae/cbefae6e91feaa71023d64311c2e398f.jpg',
+    },
+
+    {
+        id : 3,
+        location: 'Maitama, Abuja',
+        image : 'https://i.pinimg.com/564x/a7/87/10/a787105089b8f34b1cab59f9bd7020c3.jpg',
+    },
+
+    {
+        id : 4,
+        location: 'Central Area, Abuja',
+        image : 'https://i.pinimg.com/564x/58/93/64/589364023c6f4fc4a3c3dbed944c4251.jpg',
+    },
+
+    {
+        id : 5,
+        location: 'Lekki, Lagos',
+        image : 'https://i.pinimg.com/564x/b2/34/31/b23431ce10e523bbfa661d91e72f50fa.jpg',
+    },
+
+    {
+        id : 6,
+        location: 'Area 3, Abuja',
+        image : 'https://i.pinimg.com/564x/55/fc/f8/55fcf8a687fef98fdec647d3cd10ea21.jpg',
+    },
+
+    {
+        id : 7,
+        location: 'Victoria Island,Lagos',
+        image : 'https://i.pinimg.com/564x/28/4e/0c/284e0c710b10325df9ac825952d2e408.jpg',
+    },
+
+    {
+        id : 8,
+        location: 'Marina, Lagos',
+        image : 'https://i.pinimg.com/564x/6d/67/8a/6d678a0f065fa9c86a4f257a535d2ceb.jpg',
+    },
+
+    {
+        id : 9,
+        location: 'Jabi, Abuja',
+        image : 'https://i.pinimg.com/564x/3e/b5/de/3eb5de7f69ae62a2f0f19c68ed95d47c.jpg',
+    },
+
+    {
+        id : 10,
+        location: 'Gwarimpa, Abuja',
+        image : 'https://i.pinimg.com/564x/89/bb/ba/89bbba2092b37c3847e1ae79a829bef2.jpg',
+    },
+
+]

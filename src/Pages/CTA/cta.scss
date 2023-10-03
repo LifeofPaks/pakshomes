@@ -1,4 +1,4 @@
-@import './../styles/Responsive.scss';
+@import '../../styles/Responsive.scss';
 
 .ctaction{
     display: flex;
@@ -70,7 +70,7 @@
                 font-size: 10px;
                 letter-spacing: 2px;
                 font-weight:600;
-                margin-top: 1rem;
+                margin-top: .5rem;
             }
 
             .guest{
@@ -142,9 +142,13 @@
             left: 2rem;
             top: 2rem;
             backdrop-filter: blur(2px);
-            background: #ffffffa7;
-            padding: 10px;
+            background: #ffffff27;
+            padding: 5px 7px;
             border-radius: 4px;
+
+            span{
+                color: #ffffffc2;
+            }
         }
     }
 }

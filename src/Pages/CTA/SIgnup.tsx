@@ -57,9 +57,7 @@ const SIgnup = () => {
           <p>
             <span> Paks Homes</span> is a property agency with luxury projects
             and the best deals. Dozens of real estate luxury apartments, smart
-            homes, elegantly designed offices, modern constructions and all
-            consultancy services are available on the Property Superiors
-            website. We help buyers to buy and sellers to sell.
+            homes, elegantly designed offices, modern constructions. We help buyers to buy and sellers to sell.
           </p>
         </div>
         <Link to="/">

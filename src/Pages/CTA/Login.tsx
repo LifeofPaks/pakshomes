@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import "./cta.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { AppContext } from "../hooks/ContextApi";
+import { AppContext } from "../../hooks/ContextApi";
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const {setAsGuest, setLoggedIn} = useContext(AppContext)
+  const {setAsGuest, setIsOnline} = useContext(AppContext)
 
   const handleGuestLogin = () => {
     setAsGuest(true);
-    setLoggedIn(false)
+    setIsOnline(true)
     navigate("/");
   };
 
@@ -53,9 +53,7 @@ const Login = () => {
           <p>
             <span> Paks Homes</span> is a property agency with luxury projects
             and the best deals. Dozens of real estate luxury apartments, smart
-            homes, elegantly designed offices, modern constructions and all
-            consultancy services are available on the Property Superiors
-            website. We help buyers to buy and sellers to sell.
+            homes, elegantly designed offices, modern constructions. We help buyers to buy and sellers to sell.
           </p>
         </div>
         <Link to="/">
