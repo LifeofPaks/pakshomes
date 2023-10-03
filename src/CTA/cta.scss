@@ -1,0 +1,87 @@
+@import './../styles/Responsive.scss';
+
+.cta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    // background: url('./../assets/Images/bg1.jpeg') no-repeat ;
+    background-size: cover;
+
+    .container{
+        h1{
+            color: #206ca0;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        form{
+
+            label{
+                font-size: 11px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            .inputWrapper{
+                width: 350px;
+                border: 1px solid #ccc;
+                padding: .5rem 1rem ;
+                margin-bottom: .5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                height: 45px;
+
+                img{
+                    width: 14px;
+                }
+
+                input{
+                    width: 100%;
+                    font-size: 14px;
+
+                    &::placeholder{
+                        color: #bbb;
+                        font-size: 13px;
+                        letter-spacing: 1px;
+                        font-family: inherit;
+                    }
+
+                    &:focus{
+
+
+                        &::placeholder{
+                            color: transparent;
+                        }
+                    }
+                }
+            }
+
+            button{
+                height: 45px;
+                width: 350px;
+                background: gold;
+                text-transform: uppercase;
+                font-size: 10px;
+                letter-spacing: 2px;
+                margin-bottom: 1rem;
+                font-weight:600;
+                margin-top: 1rem;
+            }
+        }
+
+        p{
+            font-size: 13px;
+
+            a{
+                color: #206ca0;
+                font-weight: 600;
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

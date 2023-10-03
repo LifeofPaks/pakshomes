@@ -60,11 +60,11 @@ const Featured = () => {
                 <span>{item.views}</span>
               </div>
 
-              <div className="status">
+              <div className={`status ${item.status ? 'av' : 'na'}`}>
                 {
                     item.status ? 
-                    <span className="ready">Ready to Move</span> :
-                    <span className="uc">Under Construction</span>
+                    <span >Available</span> :
+                    <span >Not Available</span>
                 }
               </div>
 
