@@ -1,20 +1,41 @@
-import React from "react";
+import { useContext } from "react";
 import "./cta.scss";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../hooks/ContextApi";
 
 const SIgnup = () => {
+  const {
+    error,
+    errMsg,
+    handleFullname,
+    handlePhone,
+    handleEmail,
+    handlePassword,
+    register,
+  } = useContext(AppContext);
+
   return (
     <div className="signup ctaction">
       <div className="container">
         <h1>Creat an account</h1>
-        <form>
+        {error && 
+
+          <p className="errMsg"> {errMsg}</p>
+
+        }
+        <form onSubmit={register}>
           <label htmlFor="fname">Full Name</label>
           <div className="inputWrapper">
             <img
               src="https://img.icons8.com/ios-glyphs/30/cccccc/user--v1.png"
               alt="user--v1"
             />
-            <input type="text" placeholder="Full Name" id="fname" />
+            <input
+              type="text"
+              placeholder="Full Name"
+              id="fname"
+              onChange={handleFullname}
+            />
           </div>
 
           <label htmlFor="fname">Phone Number</label>
@@ -23,7 +44,11 @@ const SIgnup = () => {
               src="https://img.icons8.com/ios-filled/100/cccccc/phone.png"
               alt="phone"
             />
-            <input type="text" placeholder="Phone Number" />
+            <input
+              type="text"
+              placeholder="Phone Number"
+              onChange={handlePhone}
+            />
           </div>
 
           <label htmlFor="fname">Email</label>
@@ -32,7 +57,7 @@ const SIgnup = () => {
               src="https://img.icons8.com/ios-filled/100/cccccc/new-post.png"
               alt="new-post"
             />
-            <input type="text" placeholder="Email" />
+            <input type="text" placeholder="Email" onChange={handleEmail} />
           </div>
 
           <label htmlFor="fname">Password</label>
@@ -41,7 +66,11 @@ const SIgnup = () => {
               src="https://img.icons8.com/ios-filled/100/cccccc/password.png"
               alt="password"
             />
-            <input type="password" placeholder="Password" />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={handlePassword}
+            />
           </div>
 
           <button>Continue</button>
@@ -57,7 +86,8 @@ const SIgnup = () => {
           <p>
             <span> Paks Homes</span> is a property agency with luxury projects
             and the best deals. Dozens of real estate luxury apartments, smart
-            homes, elegantly designed offices, modern constructions. We help buyers to buy and sellers to sell.
+            homes, elegantly designed offices, modern constructions. We help
+            buyers to buy and sellers to sell.
           </p>
         </div>
         <Link to="/">

@@ -1,0 +1,51 @@
+@import "../../styles/Responsive.scss";
+
+.about {
+  p {
+    font-size: 15px;
+  }
+
+  .content {
+    margin-top: 5rem;
+    padding-inline: 8%;
+
+    h1 {
+      width: 100%;
+      text-align: center;
+      text-transform: capitalize;
+      font-style: italic;
+      margin-bottom: 3rem;
+      color: rgb(24, 154, 106);
+      font-size: 30px;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 22px;
+
+      span {
+        color: #206ca0;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .purpose {
+    margin-top: 3rem;
+
+    .item {
+      margin-bottom: 2rem;
+
+      h2 {
+        margin-bottom: 0.5rem;
+        font-size: 20px;
+      }
+    }
+  }
+}

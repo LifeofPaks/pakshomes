@@ -263,6 +263,10 @@
           transition: .3s;
           width: 100%;
 
+          &.active{
+            color: #00d4ff;
+          }
+
           &:hover{
               color: #00d4ff;
           }

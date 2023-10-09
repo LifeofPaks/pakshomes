@@ -1,8 +1,18 @@
-import React from "react";
+
 import "./Properties.scss";
 import { exploreData } from "../../Data/Data";
 
 const Properties = () => {
+
+  const nextSlide = () => {
+    const slider: any = document.getElementById('explore')
+    slider.scrollLeft = slider.scrollLeft - 350
+  };
+
+  const prevSlide = () => {
+    const slider: any = document.getElementById('explore')
+    slider.scrollLeft = slider.scrollLeft + 350
+  };
   return (
     <div className="propertiez">
       <h1>Properties by locations</h1>
@@ -13,7 +23,7 @@ const Properties = () => {
       </p>
 
     <div className="exploreContainer">
-    <div className="explore">
+    <div className="explore" id="explore">
         {exploreData.map((item) => (
           <div className="card" key={item.id}>
             <img src={item.image} alt="card-img" />
@@ -21,8 +31,8 @@ const Properties = () => {
           </div>
         ))}
 
-        <button className="left"><img src="https://img.icons8.com/ios-glyphs/30/333333/chevron-left.png" alt="chevron-left"/></button>
-        <button className="right"><img src="https://img.icons8.com/ios-glyphs/30/333333/chevron-right.png" alt="chevron-right"/></button>
+        <button onClick={prevSlide} className="left"><img src="https://img.icons8.com/ios-glyphs/30/333333/chevron-left.png" alt="chevron-left"/></button>
+        <button onClick={nextSlide} className="right"><img src="https://img.icons8.com/ios-glyphs/30/333333/chevron-right.png" alt="chevron-right"/></button>
       </div>
     </div>
     

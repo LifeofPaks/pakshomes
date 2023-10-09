@@ -1,0 +1,117 @@
+@import "../../styles/Responsive.scss";
+
+.footer {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(19, 41, 204, 0.52),
+      rgba(117, 19, 93, 0.73)
+    ),
+    url("https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80");
+  height: 100vh;
+  background-size: cover;
+  color: #fff;
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    background: #00000054;
+    padding: 4rem 8%;
+    backdrop-filter: blur(2px);
+
+    .heading{
+        margin-bottom: 2rem;
+        font-size: 26px;
+    }
+
+    .top {
+      width: 100%;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #ffffff59;
+      margin-bottom: 3rem;
+      img {
+        width: 20px;
+      }
+
+      .info{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        p{
+            font-size: 14px;
+        }
+      }
+
+      .socials{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+
+        img{
+            transition: .3s;
+            cursor: pointer;
+
+            &:hover{
+                transform: translateY(-2px);
+            }
+        }
+      }
+
+    }
+
+    .bottom {
+      display: flex;
+      align-items: flex-start;
+      gap: 4rem;
+      padding-block: 2rem 3rem;
+      margin-bottom: 3rem;
+
+      .col {
+        width: 300px;
+        .title {
+          text-transform: uppercase;
+          font-size: 14px;
+          letter-spacing: 2px;
+          margin-bottom: 1rem;
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 25px;
+        }
+
+        li {
+          font-size: 11px;
+          letter-spacing: 1px;
+          margin-bottom: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+
+          &:not(:first-child) {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .logo {
+        margin-bottom: 1rem;
+        h1 {
+          span {
+            color: #ffffffb1;
+          }
+        }
+      }
+    }
+
+    .cr {
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      padding-top: 3rem;
+      border-top: 1px solid #ffffff59;
+    }
+  }
+}

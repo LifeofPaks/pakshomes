@@ -6,12 +6,192 @@ import Login from "./Pages/CTA/Login";
 import { useState } from "react";
 import { AppContext } from "./hooks/ContextApi";
 import Guest from "./Pages/Guest/Guest";
-import Navbar from "./Components/Navbar/Navbar";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./config/Firebase";
+import About from "./Pages/About/About";
+import Contact from "./Pages/Contact/Contact";
+import Sale from "./Pages/Sale";
+import Rent from "./Pages/Rent";
+import Shortlet from "./Pages/Shortlet";
 
 function App() {
-  const [asGuest, setAsGuest] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [asGuest, setAsGuest] = useState(false);
   const [isOnline, setIsOnline] = useState(false);
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [error, setError] = useState(false);
+  const[errMsg, setErrMsg] = useState('')
+
+  const handleFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+    setError(false);
+  };
+
+  const handlePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhone(e.target.value);
+    setError(false);
+  };
+
+  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    setError(false);
+  };
+
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+    setError(false);
+  };
+
+  const isValidEmail = (email: string) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
+  let isValid: any;
+
+  const confirmEmail = () => {
+    if (email === "") {
+      setError(true);
+      setErrMsg("Email is required");
+      isValid = false;
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    } else if (!isValidEmail(email)) {
+      setError(true);
+      setErrMsg("Whoops, make sure its an email");
+      isValid = false;
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    } else {
+      setError(false);
+      setErrMsg("");
+      isValid = true;
+    }
+  };
+
+  const confirmPassword = () => {
+    if (password === "") {
+      setError(true);
+      setErrMsg("Password is required");
+      isValid = false;
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    } else {
+      setError(false);
+      setErrMsg("");
+      isValid = true;
+    }
+  };
+
+  const confirmFullname = () => {
+    if (name === "") {
+      setError(true);
+      setErrMsg("Full Name is required");
+      isValid = false;
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    } else {
+      setError(false);
+      setErrMsg("");
+      isValid = true;
+    }
+  };
+
+  const confirmPhone = () => {
+    if (phone === "") {
+      setError(true);
+      setErrMsg("Phone number is required");
+      isValid = false;
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    } else {
+      setError(false);
+      setErrMsg("");
+      isValid = true;
+    }
+  };
+
+  // const confirmRegInfo = () => {
+  //   if (name === "" && phone != "" && email != "" && password != "") {
+  //     setError(true);
+  //     setErrMsg("Full Name is required");
+  //     isValid = false;
+  //   } else if (name != "" && phone === "" && email != "" && password != "") {
+  //     setError(true);
+  //     setErrMsg("Phone number is required");
+  //     isValid = false;
+  //   } else if (name != "" && phone != "" && email === "" && password != "") {
+  //     setError(true);
+  //     setErrMsg("Email is required");
+  //     isValid = false;
+  //   } else if (name != "" && phone != "" && email != "" && password === "") {
+  //     setError(true);
+  //     setErrMsg("Password is required");
+  //     isValid = false;
+  //   } else if (
+  //     name != "" &&
+  //     phone != "" &&
+  //     email !== "" &&
+  //     !isValidEmail(email) &&
+  //     password != ""
+  //   ) {
+  //     setError(true);
+  //     setErrMsg("Whoops, make sure its an email");
+  //     isValid = false;
+  //   } else {
+  //     setError(false);
+  //     setErrMsg("");
+  //     isValid = true;
+  //   }
+  // };
+
+  const confirmLoginInfo = () => {
+    if (email === "" || password === "") {
+      setError(true);
+      setErrMsg("Email or Password is required");
+
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+
+      isValid = false;
+    } else {
+      setError(false);
+      setErrMsg("");
+      isValid = true;
+    }
+  };
+
+  const register = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    confirmFullname();
+    confirmPhone();
+    confirmEmail();
+    confirmPassword();
+
+    // if (isValid) {
+    //   createUserWithEmailAndPassword(auth, email, password)
+    //     .then((userCredential) => {
+    //       console.log(userCredential);
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // }
+  };
+
+  const login = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    confirmLoginInfo();
+  };
 
   return (
     <div>
@@ -23,14 +203,45 @@ function App() {
           setLoggedIn,
           isOnline,
           setIsOnline,
+          password,
+          setPassword,
+          email,
+          setEmail,
+          name,
+          setName,
+          phone,
+          setPhone,
+          error,
+          setError,
+          errMsg,
+          // nameErrMsg,
+          // phoneErrMsg,
+          // emailErrMsg,
+          // passwordErrMsg,
+          // loginErrMsg,
+          // setNameErrMsg,
+          // setPhoneErrMsg,
+          // setEmailErrMsg,
+          // setPasswordErrMsg,
+          // setLoginErrMsg,
+          handleFullname,
+          handlePhone,
+          handleEmail,
+          handlePassword,
+          register,
+          login,
         }}
       >
-
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SIgnup />} />
           <Route path="/" element={<Layout />} />
           <Route path="/guest" element={<Guest />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/sale" element={<Sale />} />
+          <Route path="/rent" element={<Rent />} />
+          <Route path="/shortlet" element={<Shortlet />} />
         </Routes>
       </AppContext.Provider>
     </div>

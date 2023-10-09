@@ -6,11 +6,19 @@ import { AppContext } from "../../hooks/ContextApi";
 const Login = () => {
   const navigate = useNavigate();
 
-  const {setAsGuest, setIsOnline} = useContext(AppContext)
+  const {
+    setAsGuest,
+    setIsOnline,
+    error,
+    errMsg,
+    handleEmail,
+    handlePassword,
+    login
+  } = useContext(AppContext);
 
   const handleGuestLogin = () => {
     setAsGuest(true);
-    setIsOnline(true)
+    setIsOnline(true);
     navigate("/");
   };
 
@@ -18,14 +26,19 @@ const Login = () => {
     <div className=" ctaction">
       <div className="container">
         <h1>log into your account</h1>
-        <form>
+        {
+          error &&
+        <p className="errMsg"> {errMsg}</p>
+        }
+
+        <form onSubmit={login}>
           <label htmlFor="fname">Email</label>
           <div className="inputWrapper">
             <img
               src="https://img.icons8.com/ios-filled/100/cccccc/new-post.png"
               alt="new-post"
             />
-            <input type="text" placeholder="Email" />
+            <input type="text" placeholder="Email" onChange={handleEmail}/>
           </div>
 
           <label htmlFor="fname">Password</label>
@@ -34,7 +47,11 @@ const Login = () => {
               src="https://img.icons8.com/ios-filled/100/cccccc/password.png"
               alt="password"
             />
-            <input type="password" placeholder="Password" />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={handlePassword}
+            />
           </div>
 
           <button>Continue</button>
@@ -53,7 +70,8 @@ const Login = () => {
           <p>
             <span> Paks Homes</span> is a property agency with luxury projects
             and the best deals. Dozens of real estate luxury apartments, smart
-            homes, elegantly designed offices, modern constructions. We help buyers to buy and sellers to sell.
+            homes, elegantly designed offices, modern constructions. We help
+            buyers to buy and sellers to sell.
           </p>
         </div>
         <Link to="/">

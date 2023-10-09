@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import { AppContext } from "../../hooks/ContextApi";
 
@@ -108,7 +108,10 @@ const Navbar = () => {
 
                   <div className="hl"></div>
                   <div className="action">
-                  <img src="https://img.icons8.com/windows/64/333333/login-rounded.png" alt="login-rounded"/>
+                    <img
+                      src="https://img.icons8.com/windows/64/333333/login-rounded.png"
+                      alt="login-rounded"
+                    />
                     <Link onClick={handleSwitchUser} to="/login">
                       Log in
                     </Link>
@@ -121,20 +124,34 @@ const Navbar = () => {
       </section>
 
       <section className="bottom">
-        <Link to='/'>
-        <div className="logo">
-          <img
-            src="https://img.icons8.com/ios-filled/100/206ca0/dynamics-365.png"
-            alt="dynamics-365"
-          />
-          <h1>
-            Paks <span>Homes</span>
-          </h1>
-        </div>
+        <Link to="/">
+          <div className="logo">
+            <img
+              src="https://img.icons8.com/ios-filled/100/206ca0/dynamics-365.png"
+              alt="dynamics-365"
+            />
+            <h1>
+              Paks <span>Homes</span>
+            </h1>
+          </div>
         </Link>
-       
 
         <ul className="navLinks">
+          <li>
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      color: "#00d4ff",
+                    }
+                  : {}
+              }
+              // activeclassname="active"
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
           <li className="properties">
             Properties
             <img
@@ -143,27 +160,71 @@ const Navbar = () => {
             />
             <ul className="pLists">
               <li>
-                <Link to="">For rent</Link>
+                <Link to="/rent">For rent</Link>
               </li>
               <li>
-                <Link to="">for shortlet</Link>
+                <Link to="/shortlet">for shortlet</Link>
               </li>
               <li>
-                <Link to="">for sale</Link>
+                <Link to="/sale">for sale</Link>
               </li>
             </ul>
           </li>
           <li>
-            <Link to="">Blog</Link>
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      color: "#00d4ff",
+                    }
+                  : {}
+              }
+              to="/blog"
+            >
+              Blog
+            </NavLink>
           </li>
           <li>
-            <Link to="">News</Link>
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      color: "#00d4ff",
+                    }
+                  : {}
+              }
+              to="/news"
+            >
+              News
+            </NavLink>
           </li>
           <li>
-            <Link to="">About Us</Link>
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      color: "#00d4ff",
+                    }
+                  : {}
+              }
+              to="/about"
+            >
+              About Us
+            </NavLink>
           </li>
           <li>
-            <Link to="">Contact</Link>
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      color: "#00d4ff",
+                    }
+                  : {}
+              }
+              to="/contact"
+            >
+              Contact
+            </NavLink>
           </li>
         </ul>
       </section>
