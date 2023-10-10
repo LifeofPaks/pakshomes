@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
 import { propertiesData } from "../Data/Data";
+import Card from '../Components/Card/Card';
 
 const Shortlet = () => {
   return (
@@ -14,52 +15,9 @@ const Shortlet = () => {
         <div className="proContainer">
           {propertiesData.map(
             (item) =>
-              item.shortlet && (
-                <div className="card" key={item.id}>
-                  <img className="cardImage" src={item.img} alt="card-img" />
-                  <div className="details">
-                    <div className="title">
-                      <h4>{item.title}</h4>
-                      <img
-                        src="https://img.icons8.com/ios/100/206ca0/like--v1.png"
-                        alt="like--v1"
-                      />
-                    </div>
+            item.shortlet &&
+              <Card item={item}/>
 
-                    <div className="location">
-                      <img
-                        src="https://img.icons8.com/ios-filled/100/333333/marker.png"
-                        alt="marker"
-                      />
-                      <span>{item.location}</span>
-                    </div>
-
-                    <h3>₦{item.price}</h3>
-                  </div>
-
-                  <div className="view">
-                    <img
-                      width="14"
-                      src="https://img.icons8.com/ios-filled/100/333333/slr-camera.png"
-                      alt="slr-camera"
-                    />
-                    <span>{item.views}</span>
-                  </div>
-
-                  <div className={`status ${item.status ? "av" : "na"}`}>
-                    {item.status ? (
-                      <span>Available</span>
-                    ) : (
-                      <span>Not Available</span>
-                    )}
-                   
-                  </div>
-                  <div className="package">
-                    <span>{item.package}</span>
-                  </div>
-               
-                </div>
-              )
           )}
         </div>
       </div>

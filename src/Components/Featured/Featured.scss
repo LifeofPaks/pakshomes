@@ -185,6 +185,19 @@
                         background: rgba(255, 0, 0, 0.387);
                     }
                 }
+
+                .package{
+                    position: absolute;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    padding: 3px;
+                    backdrop-filter: blur(2px);
+                    left: 1rem;
+                    background: #0707074b;
+                    color: #fff;
+                    top: 17rem;
+                  }
             }
         }
     }

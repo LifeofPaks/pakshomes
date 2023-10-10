@@ -25,7 +25,7 @@ const Properties = () => {
     <div className="exploreContainer">
     <div className="explore" id="explore">
         {exploreData.map((item) => (
-          <div className="card" key={item.id}>
+          <div className="cardX" key={item.id}>
             <img src={item.image} alt="card-img" />
             <h1>{item.location}</h1>
           </div>

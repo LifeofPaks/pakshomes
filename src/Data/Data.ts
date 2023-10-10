@@ -2,7 +2,6 @@ import H2 from "../assets/Images/H7.jpeg";
 import H3 from "../assets/Images/H8.jpeg";
 import H5 from "../assets/Images/H0.jpeg";
 
-
 // HERO DATA
 export const heroData = [
   {
@@ -37,7 +36,6 @@ export const heroData = [
     btn: "",
   },
 ];
-
 
 // FEATURE DATA
 export const featuredData = [
@@ -122,7 +120,6 @@ export const featuredData = [
   },
 ];
 
-
 // EXPLORE DATA
 export const exploreData = [
   {
@@ -196,7 +193,6 @@ export const exploreData = [
   },
 ];
 
-
 // PROPERTIES DATA
 export const propertiesData = [
   {
@@ -207,9 +203,8 @@ export const propertiesData = [
     views: 10,
     img: "https://i.pinimg.com/564x/fe/8f/d0/fe8fd03c3d73fa9fa86d4318ef93f5b4.jpg",
     price: "5,000,000",
-    package: 'for rent',
-rent: true
-
+    package: "for rent",
+    rent: true,
   },
 
   {
@@ -220,8 +215,8 @@ rent: true
     views: 15,
     img: "https://i.pinimg.com/564x/6c/c0/c3/6cc0c38a21f643bdcd5d37e8c393d7d1.jpg",
     price: "630,000",
-    package: 'for shortlet',
-    shortlet: true
+    package: "for shortlet",
+    shortlet: true,
   },
 
   {
@@ -232,8 +227,8 @@ rent: true
     views: 6,
     img: "https://i.pinimg.com/564x/41/61/5d/41615d83ab52198a9e5bc46c23994967.jpg",
     price: "61,000,000",
-    package: 'for sale',
-sale: true
+    package: "for sale",
+    sale: true,
   },
 
   {
@@ -244,8 +239,8 @@ sale: true
     views: 11,
     img: "https://i.pinimg.com/564x/6a/8e/a7/6a8ea7b05daf0653cbfaca23f85e1b79.jpg",
     price: "50,000,000",
-    package: 'for sale',
-sale: true
+    package: "for sale",
+    sale: true,
   },
 
   {
@@ -256,8 +251,8 @@ sale: true
     views: 2,
     img: "https://i.pinimg.com/736x/9c/48/9b/9c489b39932611cd9baefdd82797d640.jpg",
     price: "66,000,000",
-    package: 'for sale',
-sale: true
+    package: "for sale",
+    sale: true,
   },
 
   {
@@ -268,8 +263,8 @@ sale: true
     views: 10,
     img: "https://i.pinimg.com/564x/b2/e1/ec/b2e1ecf2fc279cfe19b60e923fbd726e.jpg",
     price: "620,000",
-    package: 'for shortlet',
-    shortlet: true
+    package: "for shortlet",
+    shortlet: true,
   },
 
   {
@@ -280,20 +275,20 @@ sale: true
     views: 14,
     img: "https://i.pinimg.com/564x/d9/bd/42/d9bd42d04e076bb9ba425bff311d6e6e.jpg",
     price: "88,000,000",
-    package: 'for sale',
-sale: true
+    package: "for sale",
+    sale: true,
   },
 
   {
     id: 8,
     title: "3 bedroom terraced duplex",
     location: "Benin",
-    status: true,
+    status: false,
     views: 10,
     img: "https://i.pinimg.com/564x/e9/ff/7e/e9ff7e385ac32d8af05769ad9a9e8005.jpg",
     price: "3,000,000",
-    package: 'for rent',
-rent: true
+    package: "for rent",
+    rent: true,
   },
 
   {
@@ -304,22 +299,20 @@ rent: true
     views: 4,
     img: "https://i.pinimg.com/474x/a6/3d/10/a63d10ff7d4d657b2831cabab87fd215.jpg",
     price: "9,000,000",
-    package: 'for rent',
-rent: true
-
+    package: "for rent",
+    rent: true,
   },
 
   {
     id: 10,
     title: "3 bedroom terraced duplex",
     location: "Abuja",
-    status: true,
+    status: false,
     views: 8,
     img: "https://i.pinimg.com/474x/93/20/36/9320365f720efa7864a27930590d00b3.jpg",
     price: "13,000,000",
-    package: 'for rent',
-rent: true
-
+    package: "for rent",
+    rent: true,
   },
 
   {
@@ -330,8 +323,8 @@ rent: true
     views: 4,
     img: "https://i.pinimg.com/474x/96/05/b2/9605b2f33b16d04440bde1ad8c0d26a7.jpg",
     price: "130,000,000",
-    package: 'for sale',
-sale: true
+    package: "for sale",
+    sale: true,
   },
 
   {
@@ -342,8 +335,8 @@ sale: true
     views: 11,
     img: "https://i.pinimg.com/474x/a8/e4/5d/a8e45ddc2ec3434e2df544120e15ba60.jpg",
     price: "400,000",
-    package: 'for shortlet',
-    shortlet: true
+    package: "for shortlet",
+    shortlet: true,
   },
 
   {
@@ -354,8 +347,8 @@ sale: true
     views: 5,
     img: "https://i.pinimg.com/474x/ea/41/37/ea4137a2499e1a7c028036e2c3191714.jpg",
     price: "110,000,000",
-    package: 'for sale',
-sale: true
+    package: "for sale",
+    sale: true,
   },
 
   {
@@ -366,8 +359,8 @@ sale: true
     views: 8,
     img: "https://i.pinimg.com/474x/d6/91/ff/d691ff1bd987cdcf1e92c3771fb8df7b.jpg",
     price: "700,000",
-    package: 'for shortlet',
-    shortlet: true
+    package: "for shortlet",
+    shortlet: true,
   },
 
   {
@@ -378,8 +371,8 @@ sale: true
     views: 13,
     img: "https://i.pinimg.com/474x/ca/f0/66/caf0667e9f3faa5aa9e03f3795d7397b.jpg",
     price: "100,000,000",
-    package: 'for rent',
-rent: true
+    package: "for rent",
+    rent: true,
   },
 
   {
@@ -390,8 +383,8 @@ rent: true
     views: 2,
     img: "https://i.pinimg.com/474x/f5/c8/81/f5c881e1d706509a2d345fd8c9796779.jpg",
     price: "90,000,000",
-    package: 'for sale',
-sale: true
+    package: "for sale",
+    sale: true,
   },
 
   {
@@ -402,8 +395,8 @@ sale: true
     views: 4,
     img: "https://i.pinimg.com/474x/1c/cc/ce/1cccce2faa66b66ffd76422233427c20.jpg",
     price: "600,000",
-    package: 'for shorlet',
-    shortlet: true
+    package: "for shorlet",
+    shortlet: true,
   },
 
   {
@@ -414,8 +407,8 @@ sale: true
     views: 9,
     img: "https://i.pinimg.com/474x/e2/a7/00/e2a700aa41bd0c42f77bdf44e67d652e.jpg",
     price: "150,000,000",
-    package: 'for sale'
-    ,sale: true
+    package: "for sale",
+    sale: true,
   },
 
   {
@@ -426,8 +419,8 @@ sale: true
     views: 4,
     img: "https://i.pinimg.com/474x/00/06/fa/0006fa0f404be1e93b09e3df8dccd00a.jpg",
     price: "6,000,000",
-    package: 'for rent',
-    rent: true
+    package: "for rent",
+    rent: true,
   },
 
   {
@@ -438,10 +431,7 @@ sale: true
     views: 5,
     img: "https://i.pinimg.com/474x/7d/27/d2/7d27d2a961b9a2d34fae5ddf5582454b.jpg",
     price: "132,000,000",
-    package: 'for sale',
-    sale: true
-
+    package: "for sale",
+    sale: true,
   },
-
-  
 ];

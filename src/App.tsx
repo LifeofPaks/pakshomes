@@ -13,6 +13,7 @@ import Contact from "./Pages/Contact/Contact";
 import Sale from "./Pages/Sale";
 import Rent from "./Pages/Rent";
 import Shortlet from "./Pages/Shortlet";
+import FeatPropertyInfo from "./Pages/FeatPropertyInfo/FeatPropertyInfo";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -51,6 +52,8 @@ function App() {
 
   let isValid: any;
 
+
+        //CONFIRM EMAIL FUNCTION
   const confirmEmail = () => {
     if (email === "") {
       setError(true);
@@ -73,6 +76,8 @@ function App() {
     }
   };
 
+
+        //CONFIRM PASSWORD FUNCTION
   const confirmPassword = () => {
     if (password === "") {
       setError(true);
@@ -88,6 +93,7 @@ function App() {
     }
   };
 
+      //CONFIRM FULL NAME FUNCTION
   const confirmFullname = () => {
     if (name === "") {
       setError(true);
@@ -103,6 +109,7 @@ function App() {
     }
   };
 
+    //CONFIRM PHONE INFO FUNCTION
   const confirmPhone = () => {
     if (phone === "") {
       setError(true);
@@ -152,6 +159,7 @@ function App() {
   //   }
   // };
 
+    // CONFIRM LOGIN IN INFO FUNCTION
   const confirmLoginInfo = () => {
     if (email === "" || password === "") {
       setError(true);
@@ -169,6 +177,8 @@ function App() {
     }
   };
 
+
+    // REGISTER IN FUNCTION
   const register = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -188,9 +198,15 @@ function App() {
     // }
   };
 
+  // LOGIN IN FUNCTION
   const login = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     confirmLoginInfo();
+  };
+
+   // AUTO SCROLL TOP ON EACH PAGE
+   const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   return (
@@ -230,6 +246,7 @@ function App() {
           handlePassword,
           register,
           login,
+          scrollToTop,
         }}
       >
         <Routes>
@@ -242,6 +259,7 @@ function App() {
           <Route path="/sale" element={<Sale />} />
           <Route path="/rent" element={<Rent />} />
           <Route path="/shortlet" element={<Shortlet />} />
+          <Route path="/card/:id" element={<FeatPropertyInfo />} />
         </Routes>
       </AppContext.Provider>
     </div>

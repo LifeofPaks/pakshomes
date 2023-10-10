@@ -1,0 +1,172 @@
+@import "../../styles/Responsive.scss";
+
+.comment {
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+  button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .comTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 18px;
+    }
+
+    .down {
+      cursor: pointer;
+      transition: 0.3s;
+
+      &.up {
+        transform: rotate(180deg);
+      }
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      h4 {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .comContainer {
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s;
+
+    &.show {
+      height: fit-content;
+      visibility: visible;
+      overflow: initial;
+      opacity: 1;
+    }
+
+    h5 {
+      border-top: 0.5px solid #ccccccb4;
+      font-weight: 600;
+      font-size: 12px;
+      margin-bottom: 0.7rem;
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.6rem;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .name {
+        font-size: 12px;
+      }
+    }
+    .time {
+      font-size: 11px;
+      color: #555;
+      font-weight: 500;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .ac {
+      background: #206ca0;
+      color: #fff;
+    }
+  }
+
+  .addCom {
+      
+      height: 0;
+      visibility: hidden;
+      overflow: hidden;
+      opacity: 0;
+      transition: 0.3s;
+      
+      &.show {
+          height: 220px;
+          visibility: visible;
+          overflow: initial;
+          opacity: 1;
+        }
+        
+        .addComTitle {
+            margin-top: 1rem;
+            padding-top: 1rem;
+        border-top: 1px dashed #ccc;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 0.6rem;
+
+      img {
+        width: 18px;
+      }
+
+      h4 {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+
+    p {
+      font-size: 13px;
+      margin-bottom: 0.3rem;
+    }
+
+    textarea {
+      width: 100%;
+      resize: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ccc;
+      outline: none;
+      height: 100px;
+      margin-bottom: 1rem;
+      font-family: monospace;
+
+      &::placeholder {
+        font-family: inherit;
+        color: #c0bdbd;
+        letter-spacing: 1px;
+      }
+    }
+
+    .btnWrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      .sb {
+        background: rgb(244, 183, 31);
+        color: #fff;
+      }
+
+      .cc {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+}
