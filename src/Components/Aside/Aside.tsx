@@ -81,6 +81,10 @@ const Aside = () => {
         <img src="https://symbols.getvecta.com/stencil_27/22_bot-services.0fdfc46c2c.jpg" alt="bot" />
         <p>The Merchant <span>added this property 9 months ago</span></p>
       </div>
+
+      <div className="disc">
+        <p><span>DISCLAIMER: </span>We do not own any property here. This site is just a personal project to showcase my skills. We are not selling or renting any of these properties </p>
+      </div>
     </div>
   );
 };

@@ -146,7 +146,6 @@ const Navbar = () => {
                     }
                   : {}
               }
-              // activeclassname="active"
               to="/"
             >
               Home

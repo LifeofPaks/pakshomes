@@ -185,4 +185,19 @@
         }
     }
 }
+
+.disc{
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgb(67, 151, 168);
+    color: #fff;
+    font-size: 14px;
+    border-left: 4px solid #000;
+
+    p{
+        span{
+            font-weight: 600;
+        }
+    }
+}
 }
