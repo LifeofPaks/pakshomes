@@ -2,6 +2,7 @@ import { useContext } from "react";
 import "./cta.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../../hooks/ContextApi";
+import Loader from "react-loaders";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,23 +14,27 @@ const Login = () => {
     errMsg,
     handleEmail,
     handlePassword,
-    login
+    login,
+    setError,
+    asGuest,
+    email,
+    password,
   } = useContext(AppContext);
 
   const handleGuestLogin = () => {
     setAsGuest(true);
     setIsOnline(true);
-    navigate("/");
+    setError(false);
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
   };
 
   return (
     <div className=" ctaction">
       <div className="container">
         <h1>log into your account</h1>
-        {
-          error &&
-        <p className="errMsg"> {errMsg}</p>
-        }
+        {error && <p className="errMsg"> {errMsg}</p>}
 
         <form onSubmit={login}>
           <label htmlFor="fname">Email</label>
@@ -38,7 +43,7 @@ const Login = () => {
               src="https://img.icons8.com/ios-filled/100/cccccc/new-post.png"
               alt="new-post"
             />
-            <input type="text" placeholder="Email" onChange={handleEmail}/>
+            <input type="text" placeholder="Email" onChange={handleEmail} value={email}/>
           </div>
 
           <label htmlFor="fname">Password</label>
@@ -51,12 +56,13 @@ const Login = () => {
               type="password"
               placeholder="Password"
               onChange={handlePassword}
+              value={password}
             />
           </div>
 
           <button>Continue</button>
-          <button onClick={handleGuestLogin} className="guest">
-            Login as Guest
+          <button type="button" onClick={handleGuestLogin} className="guest">
+            {asGuest ? <Loader type="ball-beat" /> : "Login as Guest"}
           </button>
         </form>
 

@@ -24,26 +24,30 @@ function App() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [error, setError] = useState(false);
-  const[errMsg, setErrMsg] = useState('')
+  const [nameErr, setNameErr] = useState(false);
+  const [emailErr, setEmailErr] = useState(false);
+  const [phoneErr, setPhoneErr] = useState(false);
+  const [passwordErr, setPasswordErr] = useState(false);
+  const [nameErrMsg, setNameErrMsg] = useState("");
+  const [emailErrMsg, setEmailErrMsg] = useState("");
+  const [phoneErrMsg, setPhoneErrMsg] = useState("");
+  const [passwordErrMsg, setPasswordErrMsg] = useState("");
+  const [errMsg, setErrMsg] = useState("");
 
   const handleFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
-    setError(false);
   };
 
   const handlePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhone(e.target.value);
-    setError(false);
   };
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
-    setError(false);
   };
 
   const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
-    setError(false);
   };
 
   const isValidEmail = (email: string) => {
@@ -52,114 +56,78 @@ function App() {
 
   let isValid: any;
 
-
-        //CONFIRM EMAIL FUNCTION
+  //CONFIRM EMAIL FUNCTION
   const confirmEmail = () => {
     if (email === "") {
-      setError(true);
-      setErrMsg("Email is required");
+      setEmailErr(true);
+      setEmailErrMsg("Email is required");
       isValid = false;
       setTimeout(() => {
-        setError(false);
+        setEmailErr(false);
       }, 3000);
     } else if (!isValidEmail(email)) {
-      setError(true);
-      setErrMsg("Whoops, make sure its an email");
+      setEmailErr(true);
+      setEmailErrMsg("Whoops, make sure its an email");
       isValid = false;
       setTimeout(() => {
-        setError(false);
+        setEmailErr(false);
       }, 3000);
     } else {
-      setError(false);
-      setErrMsg("");
+      setEmailErr(false);
+      setEmailErrMsg("");
       isValid = true;
     }
   };
 
-
-        //CONFIRM PASSWORD FUNCTION
+  //CONFIRM PASSWORD FUNCTION
   const confirmPassword = () => {
     if (password === "") {
-      setError(true);
-      setErrMsg("Password is required");
+      setPasswordErr(true);
+      setPasswordErrMsg("Password is required");
       isValid = false;
       setTimeout(() => {
-        setError(false);
+        setPasswordErr(false);
       }, 3000);
     } else {
-      setError(false);
-      setErrMsg("");
+      setPasswordErr(false);
+      setPasswordErrMsg("");
       isValid = true;
     }
   };
 
-      //CONFIRM FULL NAME FUNCTION
+  //CONFIRM FULL NAME FUNCTION
   const confirmFullname = () => {
     if (name === "") {
-      setError(true);
-      setErrMsg("Full Name is required");
+      setNameErr(true);
+      setNameErrMsg("Full Name is required");
       isValid = false;
       setTimeout(() => {
-        setError(false);
+        setNameErr(false);
       }, 3000);
     } else {
-      setError(false);
-      setErrMsg("");
+      setNameErr(false);
+      setNameErrMsg("");
       isValid = true;
     }
   };
 
-    //CONFIRM PHONE INFO FUNCTION
+  //CONFIRM PHONE INFO FUNCTION
   const confirmPhone = () => {
     if (phone === "") {
-      setError(true);
-      setErrMsg("Phone number is required");
+      setPhoneErr(true);
+      setPhoneErrMsg("Phone number is required");
       isValid = false;
       setTimeout(() => {
-        setError(false);
+        setPhoneErr(false);
       }, 3000);
     } else {
-      setError(false);
-      setErrMsg("");
+      setPhoneErr(false);
+      setPhoneErrMsg("");
       isValid = true;
     }
   };
 
-  // const confirmRegInfo = () => {
-  //   if (name === "" && phone != "" && email != "" && password != "") {
-  //     setError(true);
-  //     setErrMsg("Full Name is required");
-  //     isValid = false;
-  //   } else if (name != "" && phone === "" && email != "" && password != "") {
-  //     setError(true);
-  //     setErrMsg("Phone number is required");
-  //     isValid = false;
-  //   } else if (name != "" && phone != "" && email === "" && password != "") {
-  //     setError(true);
-  //     setErrMsg("Email is required");
-  //     isValid = false;
-  //   } else if (name != "" && phone != "" && email != "" && password === "") {
-  //     setError(true);
-  //     setErrMsg("Password is required");
-  //     isValid = false;
-  //   } else if (
-  //     name != "" &&
-  //     phone != "" &&
-  //     email !== "" &&
-  //     !isValidEmail(email) &&
-  //     password != ""
-  //   ) {
-  //     setError(true);
-  //     setErrMsg("Whoops, make sure its an email");
-  //     isValid = false;
-  //   } else {
-  //     setError(false);
-  //     setErrMsg("");
-  //     isValid = true;
-  //   }
-  // };
-
-    // CONFIRM LOGIN IN INFO FUNCTION
+  // CONFIRM LOGIN IN INFO FUNCTION
   const confirmLoginInfo = () => {
     if (email === "" || password === "") {
       setError(true);
@@ -177,8 +145,7 @@ function App() {
     }
   };
 
-
-    // REGISTER IN FUNCTION
+  // REGISTER IN FUNCTION
   const register = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -204,8 +171,8 @@ function App() {
     confirmLoginInfo();
   };
 
-   // AUTO SCROLL TOP ON EACH PAGE
-   const scrollToTop = () => {
+  // AUTO SCROLL TOP ON EACH PAGE
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
@@ -230,16 +197,14 @@ function App() {
           error,
           setError,
           errMsg,
-          // nameErrMsg,
-          // phoneErrMsg,
-          // emailErrMsg,
-          // passwordErrMsg,
-          // loginErrMsg,
-          // setNameErrMsg,
-          // setPhoneErrMsg,
-          // setEmailErrMsg,
-          // setPasswordErrMsg,
-          // setLoginErrMsg,
+          nameErrMsg,
+          phoneErrMsg,
+          emailErrMsg,
+          passwordErrMsg,
+          nameErr,
+          emailErr,
+          phoneErr,
+          passwordErr,
           handleFullname,
           handlePhone,
           handleEmail,

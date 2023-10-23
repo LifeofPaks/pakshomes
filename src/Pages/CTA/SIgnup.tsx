@@ -1,28 +1,35 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./cta.scss";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../hooks/ContextApi";
 
 const SIgnup = () => {
   const {
-    error,
-    errMsg,
+    nameErr,
+    emailErr,
+    phoneErr,
+    passwordErr,
     handleFullname,
     handlePhone,
     handleEmail,
     handlePassword,
     register,
+    name,
+    email,
+    phone,
+    password,
+    nameErrMsg,
+    phoneErrMsg,
+    emailErrMsg,
+    passwordErrMsg,
   } = useContext(AppContext);
+
 
   return (
     <div className="signup ctaction">
       <div className="container">
         <h1>Creat an account</h1>
-        {error && 
-
-          <p className="errMsg"> {errMsg}</p>
-
-        }
+        
         <form onSubmit={register}>
           <label htmlFor="fname">Full Name</label>
           <div className="inputWrapper">
@@ -35,7 +42,11 @@ const SIgnup = () => {
               placeholder="Full Name"
               id="fname"
               onChange={handleFullname}
+              name="name"
+              value={name}
             />
+
+{nameErr && <p className="errMsgs"> {nameErrMsg}</p>}
           </div>
 
           <label htmlFor="fname">Phone Number</label>
@@ -48,7 +59,11 @@ const SIgnup = () => {
               type="text"
               placeholder="Phone Number"
               onChange={handlePhone}
+              name="phone"
+              value={phone}
             />
+
+{phoneErr && <p className="errMsgs"> {phoneErrMsg}</p>}
           </div>
 
           <label htmlFor="fname">Email</label>
@@ -57,7 +72,15 @@ const SIgnup = () => {
               src="https://img.icons8.com/ios-filled/100/cccccc/new-post.png"
               alt="new-post"
             />
-            <input type="text" placeholder="Email" onChange={handleEmail} />
+            <input
+              type="text"
+              placeholder="Email"
+              onChange={handleEmail}
+              name="email"
+              value={email}
+            />
+
+{emailErr && <p className="errMsgs"> {emailErrMsg}</p>}
           </div>
 
           <label htmlFor="fname">Password</label>
@@ -70,7 +93,11 @@ const SIgnup = () => {
               type="password"
               placeholder="Password"
               onChange={handlePassword}
+              name="password"
+              value={password}
             />
+
+{passwordErr && <p className="errMsgs"> {passwordErrMsg}</p>}
           </div>
 
           <button>Continue</button>

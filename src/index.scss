@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Unica+One&family=Voces&family=Volkhov:wght@400;700&display=swap');
 @import "animate.css";
+@import 'loaders.css/src/animations/ball-beat.scss';
+$primary-color: #fff;
 
 *{
   padding: 0;
@@ -39,12 +41,12 @@ body{
   align-items: center;
 
   img {
-    width: 40px;
+    width: 30px;
   }
 
   h1 {
     font-size: 16px;
-    margin-left: -1rem;
+    margin-left: -.7rem;
     text-transform: uppercase;
     color: #00d4ff;
     text-shadow: 0 0 2px black;

@@ -212,29 +212,6 @@
     padding-inline: 8%;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 
-    .logo {
-      display: flex;
-      align-items: center;
-
-      img {
-        width: 40px;
-      }
-
-      h1 {
-        font-size: 16px;
-        margin-left: -1rem;
-        text-transform: uppercase;
-        color: #00d4ff;
-        text-shadow: 0 0 2px black;
-
-        span {
-          font-size: 22px;
-          font-family: "MADE TOMMY Outline", sans-serif;
-          color: #156295;
-          text-shadow: none;
-        }
-      }
-    }
     .navLinks {
       display: flex;
       align-items: center;
