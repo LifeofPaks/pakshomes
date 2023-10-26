@@ -26,7 +26,7 @@ const Navbar = () => {
     })
 }
 
-const checkUser = asGuest ? 'gu˜' : loggedIn ? 'user' : ''
+const checkUser = asGuest ? 'gu' : loggedIn ? 'user' : ''
 
   return (
     <nav className="navbar">
