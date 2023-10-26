@@ -1,17 +1,32 @@
 import { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.scss";
 import { AppContext } from "../../hooks/ContextApi";
+import { signOut } from "firebase/auth";
+import { auth } from "../../config/Firebase";
 
 const Navbar = () => {
   const [showCTA, setShowCTA] = useState(false);
-  const { asGuest, loggedIn, setAsGuest, isOnline, setIsOnline } =
+  const { asGuest, loggedIn, setAsGuest, isOnline, setIsOnline, setLoggedIn } =
     useContext(AppContext);
 
   const handleSwitchUser = () => {
     setAsGuest(false);
     setIsOnline(false);
+    setLoggedIn(false)
+    signOutUser()
   };
+
+  const signOutUser = ()=>{
+    signOut(auth).then(() =>{
+        console.log('sign out successful')
+        
+    }).catch((error) =>{
+        console.log(error)
+    })
+}
+
+const checkUser = asGuest ? 'gu˜' : loggedIn ? 'user' : ''
 
   return (
     <nav className="navbar">
@@ -57,8 +72,8 @@ const Navbar = () => {
                 alt="thumbnails"
               />
 
-              {asGuest && !loggedIn ? (
-                <div className="gu">GU</div>
+              {asGuest | loggedIn ? (
+                <div className={checkUser}>{checkUser}</div>
               ) : (
                 <img
                   className="avatar"
@@ -73,14 +88,14 @@ const Navbar = () => {
             </div>
 
             <div className={` cta ${showCTA ? "in" : "ex"}`}>
-              {asGuest ? (
+              {asGuest | loggedIn ? (
                 <div className="act">
                   <div className=" su action">
                     <img
                       src="https://img.icons8.com/material-rounded/48/333333/dashboard-layout.png"
                       alt="dashboard-layout"
                     />
-                    <Link to="/guest">Dashboard</Link>
+                    <Link to={asGuest ? '/guest' : loggedIn ? '/user' : '/'}>Dashboard</Link>
                   </div>
 
                   <div className="hl"></div>
@@ -168,34 +183,6 @@ const Navbar = () => {
                 <Link to="/sale">for sale</Link>
               </li>
             </ul>
-          </li>
-          <li>
-            <NavLink
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                      color: "#00d4ff",
-                    }
-                  : {}
-              }
-              to="/blog"
-            >
-              Blog
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                      color: "#00d4ff",
-                    }
-                  : {}
-              }
-              to="/news"
-            >
-              News
-            </NavLink>
           </li>
           <li>
             <NavLink

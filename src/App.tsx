@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import "./index.scss";
 import Layout from "./Components/Layout/Layout";
 import SIgnup from "./Pages/CTA/SIgnup";
@@ -6,7 +6,7 @@ import Login from "./Pages/CTA/Login";
 import { useState } from "react";
 import { AppContext } from "./hooks/ContextApi";
 import Guest from "./Pages/Guest/Guest";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./config/Firebase";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
@@ -14,9 +14,11 @@ import Sale from "./Pages/Sale";
 import Rent from "./Pages/Rent";
 import Shortlet from "./Pages/Shortlet";
 import FeatPropertyInfo from "./Pages/FeatPropertyInfo/FeatPropertyInfo";
+import User from "./Pages/User/User";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [signedUp, setSignedUp] = useState(false);
   const [asGuest, setAsGuest] = useState(false);
   const [isOnline, setIsOnline] = useState(false);
   const [password, setPassword] = useState("");
@@ -33,6 +35,7 @@ function App() {
   const [phoneErrMsg, setPhoneErrMsg] = useState("");
   const [passwordErrMsg, setPasswordErrMsg] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const navigate = useNavigate()
 
   const handleFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -154,21 +157,50 @@ function App() {
     confirmEmail();
     confirmPassword();
 
-    // if (isValid) {
-    //   createUserWithEmailAndPassword(auth, email, password)
-    //     .then((userCredential) => {
-    //       console.log(userCredential);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //     });
-    // }
+    if (isValid) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          console.log(userCredential);
+          setTimeout(() => {
+            navigate('/login')
+          }, 2000);
+          setSignedUp(true)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   // LOGIN IN FUNCTION
   const login = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     confirmLoginInfo();
+
+    if (isValid) {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential: {}) => {
+          console.log(userCredential);
+          setLoggedIn(true)
+          setIsOnline(true)
+          setAsGuest(false)
+          setTimeout(() => {
+            navigate('/')
+          }, 2000);
+       
+        })
+        .catch((error: string) => {
+          console.log(error);
+          setLoggedIn(false)
+          setError(true);
+      setErrMsg("Invalid user credentials");
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+        });
+
+    }
+ 
   };
 
   // AUTO SCROLL TOP ON EACH PAGE
@@ -212,6 +244,7 @@ function App() {
           register,
           login,
           scrollToTop,
+          signedUp,
         }}
       >
         <Routes>
@@ -219,6 +252,7 @@ function App() {
           <Route path="/signup" element={<SIgnup />} />
           <Route path="/" element={<Layout />} />
           <Route path="/guest" element={<Guest />} />
+          <Route path="/user" element={<User />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/sale" element={<Sale />} />

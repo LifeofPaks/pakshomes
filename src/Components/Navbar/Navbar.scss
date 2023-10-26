@@ -76,6 +76,20 @@
                 font-size: 14px;
                 font-weight: bold;
                 color: #fff;
+                text-transform: uppercase;
+              }
+
+              .user{
+                width: 30px;
+                height: 30px;
+                background: #000  ;
+                border-radius: 50%;
+                display: grid;
+                place-content: center;
+                font-size: 10px;
+                font-weight: bold;
+                color: #fff;
+                text-transform: capitalize;
               }
 
               .offline{
@@ -212,6 +226,29 @@
     padding-inline: 8%;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 
+    .logo {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 30px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin-left: -.8rem;
+        text-transform: uppercase;
+        color: #00d4ff;
+        text-shadow: 0 0 2px black;
+
+        span {
+          font-size: 22px;
+          font-family: "MADE TOMMY Outline", sans-serif;
+          color: #156295;
+          text-shadow: none;
+        }
+      }
+    }
     .navLinks {
       display: flex;
       align-items: center;

@@ -19,6 +19,7 @@ const Login = () => {
     asGuest,
     email,
     password,
+    loggedIn
   } = useContext(AppContext);
 
   const handleGuestLogin = () => {
@@ -60,7 +61,9 @@ const Login = () => {
             />
           </div>
 
-          <button>Continue</button>
+          <button>
+          {loggedIn ? <Loader type="ball-beat" /> : "Continue"}
+          </button>
           <button type="button" onClick={handleGuestLogin} className="guest">
             {asGuest ? <Loader type="ball-beat" /> : "Login as Guest"}
           </button>

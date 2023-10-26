@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import "./cta.scss";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../hooks/ContextApi";
+import Loader from "react-loaders";
 
 const SIgnup = () => {
   const {
@@ -22,14 +23,24 @@ const SIgnup = () => {
     phoneErrMsg,
     emailErrMsg,
     passwordErrMsg,
+    signedUp
   } = useContext(AppContext);
-
 
   return (
     <div className="signup ctaction">
       <div className="container">
         <h1>Creat an account</h1>
-        
+        {nameErr | emailErr | phoneErr | passwordErr ? (
+          <p className="errMsg">
+            {nameErr
+              ? nameErrMsg
+              : emailErr
+              ? emailErrMsg
+              : phoneErr
+              ? phoneErrMsg
+              : passwordErrMsg}
+          </p>
+        ) : ''}
         <form onSubmit={register}>
           <label htmlFor="fname">Full Name</label>
           <div className="inputWrapper">
@@ -46,7 +57,6 @@ const SIgnup = () => {
               value={name}
             />
 
-{nameErr && <p className="errMsgs"> {nameErrMsg}</p>}
           </div>
 
           <label htmlFor="fname">Phone Number</label>
@@ -63,7 +73,6 @@ const SIgnup = () => {
               value={phone}
             />
 
-{phoneErr && <p className="errMsgs"> {phoneErrMsg}</p>}
           </div>
 
           <label htmlFor="fname">Email</label>
@@ -80,7 +89,6 @@ const SIgnup = () => {
               value={email}
             />
 
-{emailErr && <p className="errMsgs"> {emailErrMsg}</p>}
           </div>
 
           <label htmlFor="fname">Password</label>
@@ -97,10 +105,11 @@ const SIgnup = () => {
               value={password}
             />
 
-{passwordErr && <p className="errMsgs"> {passwordErrMsg}</p>}
           </div>
 
-          <button>Continue</button>
+          <button>
+          {signedUp ? <Loader type="ball-beat" /> : "Continue"}
+          </button>
         </form>
 
         <p>
