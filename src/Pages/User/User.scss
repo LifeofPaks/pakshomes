@@ -1,0 +1,11 @@
+@import '../../styles/Responsive.scss';
+
+.info{
+    padding: 6% 8%;
+
+    p{ font-size: 14px;
+        span{
+            font-weight: bold;
+        }
+    }
+}

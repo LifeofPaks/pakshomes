@@ -1,0 +1,11 @@
+@import  '../../styles/Responsive.scss';
+
+.dashboard{
+
+    .d-img{
+        width: 100%;
+        height: 300px;
+        position: relative;
+        object-fit: cover;
+    }
+}

@@ -1,13 +1,23 @@
-import React from 'react'
-import './User.scss'
-import Navbar from '../../Components/Navbar/Navbar'
+import React, { useContext } from "react";
+import "./User.scss";
+import Navbar from "../../Components/Navbar/Navbar";
+import Dashboard from "../../Components/Dashboard/Dashboard";
+import { AppContext } from "../../hooks/ContextApi";
 
 const User = () => {
+  const {name, email} = useContext(AppContext)
   return (
     <div>
-        <Navbar/>
-    </div>
-  )
-}
+      <Navbar />
+      <Dashboard />
 
-export default User
+      <div className="info">
+
+      <p><span>Name: </span>{name}</p>
+      <p> <span>Email: </span>{email}</p>
+      </div>
+    </div>
+  );
+};
+
+export default User;

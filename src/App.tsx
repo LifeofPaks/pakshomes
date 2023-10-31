@@ -6,7 +6,10 @@ import Login from "./Pages/CTA/Login";
 import { useState } from "react";
 import { AppContext } from "./hooks/ContextApi";
 import Guest from "./Pages/Guest/Guest";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "./config/Firebase";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
@@ -35,7 +38,7 @@ function App() {
   const [phoneErrMsg, setPhoneErrMsg] = useState("");
   const [passwordErrMsg, setPasswordErrMsg] = useState("");
   const [errMsg, setErrMsg] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -162,9 +165,9 @@ function App() {
         .then((userCredential) => {
           console.log(userCredential);
           setTimeout(() => {
-            navigate('/login')
+            navigate("/login");
           }, 2000);
-          setSignedUp(true)
+          setSignedUp(true);
         })
         .catch((error) => {
           console.log(error);
@@ -181,32 +184,30 @@ function App() {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential: {}) => {
           console.log(userCredential);
-          setLoggedIn(true)
-          setIsOnline(true)
-          setAsGuest(false)
+          setLoggedIn(true);
+          setIsOnline(true);
+          setAsGuest(false);
           setTimeout(() => {
-            navigate('/')
+            navigate("/");
           }, 2000);
-       
         })
         .catch((error: string) => {
           console.log(error);
-          setLoggedIn(false)
+          setLoggedIn(false);
           setError(true);
-      setErrMsg("Invalid user credentials");
-      setTimeout(() => {
-        setError(false);
-      }, 3000);
+          setErrMsg("Invalid user credentials");
+          setTimeout(() => {
+            setError(false);
+          }, 3000);
         });
-
     }
- 
   };
 
   // AUTO SCROLL TOP ON EACH PAGE
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
+
 
   return (
     <div>
