@@ -40,9 +40,9 @@ function App() {
   const [errMsg, setErrMsg] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() =>{
-    window.localStorage.setItem('save', JSON.stringify(loggedIn ))
-  }, [loggedIn])
+  // useEffect(() =>{
+  //   window.localStorage.setItem('save', JSON.stringify(loggedIn ))
+  // }, [loggedIn])
 
   const handleFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);

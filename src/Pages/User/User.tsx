@@ -11,7 +11,7 @@ const User = () => {
       <Navbar />
       <Dashboard />
 
-      <div className="info">
+      <div className="userInfo">
 
       <p><span>Name: </span>{name}</p>
       <p> <span>Email: </span>{email}</p>
