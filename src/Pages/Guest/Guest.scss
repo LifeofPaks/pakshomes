@@ -1,17 +1,23 @@
 @import '../../styles/Responsive.scss';
 
 .guestPage{
+    margin-bottom: 2rem;
 
+.guestContainer{
+    display: flex;
+    align-items: flex-start;
+    padding-top: 6rem;
+    gap: 3rem;
 
     .guestInfo{
-        padding-top: 6rem;
         padding-inline: 8%;
         margin-bottom: 1rem;
+        width: 60%;
 
         form{
             display: flex;
             flex-direction: column;
-            width: 350px;
+            width: 370px;
              
 
             label{
@@ -40,12 +46,14 @@
         .guestDisplayInfo{
             padding: 2rem;
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-            width: 350px;
+            width: 370px;
             border-radius: .5rem;
             background: gold;
+            opacity: 0;
+            animation: fadeIn 2s 1s forwards;
             p{
                 text-transform: uppercase;
-                font-size: 12px;
+                font-size: 13px;
                 font-weight: bold;
                 margin-bottom: 1rem;
 
@@ -56,5 +64,59 @@
                 }
             }
         }
+
+        .gitop {
+            margin-top: 4rem;
+            width: 100%;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #ffffff59;
+            margin-bottom: 3rem;
+            background: #333333;
+            padding: 2rem;
+            color: gold;
+            width: 370px;
+            border-radius: .5rem;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            border-left: 10px solid gold;
+
+            h1{
+                margin-bottom: 1rem;
+            }
+
+            img {
+              width: 20px;
+            }
+      
+            .info{
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              margin-bottom: 1rem;
+      
+              p{
+                  font-size: 14px;
+              }
+            }
+      
+            .socials{
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              margin-top: 2rem;
+      
+              img{
+                  transition: .3s;
+                  cursor: pointer;
+      
+                  &:hover{
+                      transform: translateY(-2px);
+                  }
+              }
+            }
+      
+          }
     }
+
+}
+    
 }
