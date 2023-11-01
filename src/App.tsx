@@ -18,11 +18,12 @@ import Rent from "./Pages/Rent";
 import Shortlet from "./Pages/Shortlet";
 import FeatPropertyInfo from "./Pages/FeatPropertyInfo/FeatPropertyInfo";
 import User from "./Pages/User/User";
+import useLocalStorage from "./useLocalStorage/useLocalStorage";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [signedUp, setSignedUp] = useState(false);
-  const [asGuest, setAsGuest] = useState(false);
+  const [asGuest, setAsGuest] = useState( false);
   const [isOnline, setIsOnline] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -40,9 +41,19 @@ function App() {
   const [errMsg, setErrMsg] = useState("");
   const navigate = useNavigate();
 
-  // useEffect(() =>{
-  //   window.localStorage.setItem('save', JSON.stringify(loggedIn ))
-  // }, [loggedIn])
+  useEffect(() =>{
+    const data = localStorage.getItem('Guest')
+
+    if(data){
+      setAsGuest(JSON.parse(data))
+    }
+  }, [])
+
+  useEffect(() =>{
+    localStorage.setItem('Guest', JSON.stringify(asGuest ))
+  }, [asGuest])
+
+
 
   const handleFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
