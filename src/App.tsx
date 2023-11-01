@@ -3,7 +3,7 @@ import "./index.scss";
 import Layout from "./Components/Layout/Layout";
 import SIgnup from "./Pages/CTA/SIgnup";
 import Login from "./Pages/CTA/Login";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AppContext } from "./hooks/ContextApi";
 import Guest from "./Pages/Guest/Guest";
 import {
@@ -39,6 +39,10 @@ function App() {
   const [passwordErrMsg, setPasswordErrMsg] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() =>{
+    window.localStorage.setItem('save', JSON.stringify(loggedIn ))
+  }, [loggedIn])
 
   const handleFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
