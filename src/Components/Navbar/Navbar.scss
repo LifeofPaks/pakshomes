@@ -2,7 +2,7 @@
 
 .navbar {
   color: #333;
-  
+
   .top {
     background: linear-gradient(90deg, #206ca0 1%, #00d4ff 100%);
     padding: 1rem 8%;
@@ -30,11 +30,19 @@
         height: 25px;
         width: 1px;
         background: #555;
+
+        @include Mobile {
+          display: none;
+        }
       }
 
       .email {
         color: #fff;
         font-size: 13px;
+
+        @include Mobile {
+          display: none;
+        }
       }
     }
 
@@ -44,180 +52,179 @@
       gap: 3rem;
       cursor: pointer;
 
-      .ctaWrapper{
+      .ctaWrapper {
         position: relative;
 
+        .profile {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 0.2rem;
+          border: 1px solid #ffffff5d;
+          border-radius: 30px;
+          padding: 3px 7px;
 
-        .profile{
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: .2rem;
-            border: 1px solid #ffffff5d;
-            border-radius: 30px;
-            padding:  3px 7px;
-
-            img{
-                width: 16px;
-            }
-
-            .avatar{
-                width: 25px;
-                border-radius: 50%;
-              }
-
-              .gu{
-                width: 30px;
-                height: 30px;
-                background: #000;
-                border-radius: 50%;
-                display: grid;
-                place-content: center;
-                font-size: 14px;
-                font-weight: bold;
-                color: #fff;
-                text-transform: uppercase;
-              }
-
-              .user{
-                width: 30px;
-                height: 30px;
-                background: #000  ;
-                border-radius: 50%;
-                display: grid;
-                place-content: center;
-                font-size: 10px;
-                font-weight: bold;
-                color: #fff;
-                text-transform: capitalize;
-              }
-
-              .offline{
-                width: 8px;
-                height: 8px;
-                border: .5px solid #fff;
-                border-radius: 50%;
-                background: rgb(196, 30, 5);
-                position: absolute;
-                right: .4rem;
-                top: .4rem;
-                
-                &.onlineStatus{
-                    background: rgb(2, 159, 2);
-                }
-              }
-        }  
-        
-        .cta{
-            position: absolute;
-            top: 6.5rem;
-            background: #fff;
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 160px;
-            z-index: 20;
-            border-radius: 3px;
-            opacity: 0;
-            visibility: hidden;
-            transition: .3s;
-            left: -.4rem;
-
-
-            @include Mini{
-              left: -2rem;
+          img {
+            width: 16px;
           }
 
-          @include Tablet{
+          .avatar {
+            width: 25px;
+            border-radius: 50%;
+          }
+
+          .gu {
+            width: 30px;
+            height: 30px;
+            background: #000;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+          }
+
+          .user {
+            width: 30px;
+            height: 30px;
+            background: #000;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: capitalize;
+          }
+
+          .offline {
+            width: 8px;
+            height: 8px;
+            border: 0.5px solid #fff;
+            border-radius: 50%;
+            background: rgb(196, 30, 5);
+            position: absolute;
+            right: 0.4rem;
+            top: 0.4rem;
+
+            &.onlineStatus {
+              background: rgb(2, 159, 2);
+            }
+          }
+        }
+
+        .cta {
+          position: absolute;
+          top: 6.5rem;
+          background: #fff;
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          width: 160px;
+          z-index: 20;
+          border-radius: 3px;
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.3s;
+          left: -0.4rem;
+
+          @include Mini {
+            left: -2rem;
+          }
+
+          @include Tablet {
             left: -3rem;
-        }
-            
-            .act{
-                gap: 0.7rem;
-                display: flex;
+          }
+
+          .act {
+            gap: 0.7rem;
+            display: flex;
             flex-direction: column;
+          }
+
+          &.in {
+            opacity: 1;
+            top: 3rem;
+            visibility: visible;
+          }
+
+          &.ex {
+            opacity: 0;
+            top: 6rem;
+            visibility: hidden;
+          }
+
+          .hl {
+            width: 100%;
+            height: 1px;
+            background: #cccccc61;
+          }
+
+          .action {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+
+            img {
+              width: 18px;
             }
-            
-            &.in{
-                opacity: 1;
-                top: 3rem;
-                visibility: visible;
 
+            a {
+              color: #333;
+              text-transform: uppercase;
+              font-size: 11px;
+              letter-spacing: 2px;
             }
-
-            &.ex{
-                opacity: 0;
-                top: 6rem;
-                visibility: hidden;
-            }
-
-            .hl{
-                width: 100%;
-                height: 1px;
-                background: #cccccc61;
-            }
-
-            .action{
-                display: flex;
-                align-items: center;
-                gap: 0.6rem;
-
-                img{
-                    width: 18px;
-                }
-
-                a{
-                    color: #333;
-                    text-transform: uppercase;
-                    font-size: 11px;
-                    letter-spacing: 2px;
-                }
-
-            }
+          }
         }
-       
       }
 
-      .sec{
+      .sec {
         display: flex;
         align-items: center;
         gap: 0.3rem;
 
+        @include Mobile {
+          display: none;
+        }
+
+        
+
         .vl {
-            height: 18px;
-            width: 1px;
+          height: 18px;
+          width: 1px;
+          background: #fff;
+          margin-right: 0.3rem;
+        }
+
+        a {
+          position: relative;
+          color: #fff;
+          font-size: 12px;
+          width: 70px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 1px;
             background: #fff;
-            margin-right: 0.3rem;
+            opacity: 0;
+            transition: 0.3s;
           }
 
-        a{  position: relative;
-            color: #fff;
-            font-size: 12px;
-            width: 70px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            
-            &::before{
-                content: '';
-                position: absolute;
-                bottom: -2px;
-                left: 50%;
-                width: 0;
-                height: 1px;
-                background: #fff;
-                opacity: 0;
-                transition: .3s;
+          &:hover {
+            &::before {
+              left: 0;
+              width: 85%;
+              opacity: 1;
             }
-
-            &:hover{
-
-                &::before{
-                    left: 0;
-                    width: 85%;
-                    opacity: 1;
-                }
-               
-            }
-
+          }
         }
       }
 
@@ -241,20 +248,32 @@
 
       img {
         width: 30px;
+
+        @include Tablet {
+          width: 25px;
+        }
       }
 
       h1 {
         font-size: 16px;
-        margin-left: -.8rem;
+        margin-left: -0.8rem;
         text-transform: uppercase;
         color: #00d4ff;
         text-shadow: 0 0 2px black;
+
+        @include Tablet {
+          font-size: 14px;
+        }
 
         span {
           font-size: 22px;
           font-family: "MADE TOMMY Outline", sans-serif;
           color: #156295;
           text-shadow: none;
+
+          @include Tablet {
+            font-size: 18px;
+          }
         }
       }
     }
@@ -263,6 +282,10 @@
       align-items: center;
       gap: 3rem;
 
+      @include Mobile {
+        display: none;
+      }
+
       li {
         text-transform: uppercase;
         font-size: 12px;
@@ -270,10 +293,14 @@
         font-weight: 500;
         cursor: pointer;
         padding-block: 1.3rem;
-        transition: .1s;
+        transition: 0.1s;
 
-        &:hover{
-            color: #00d4ff;
+        @include Tablet {
+          font-size: 10px;
+        }
+
+        &:hover {
+          color: #00d4ff;
         }
 
         img {
@@ -283,15 +310,15 @@
 
         a {
           color: #333;
-          transition: .3s;
+          transition: 0.3s;
           width: 100%;
 
-          &.active{
+          &.active {
             color: #00d4ff;
           }
 
-          &:hover{
-              color: #00d4ff;
+          &:hover {
+            color: #00d4ff;
           }
         }
 
@@ -319,6 +346,10 @@
             li {
               font-size: 11px;
               padding-block: 0;
+
+              @include Tablet {
+                font-size: 9px;
+              }
             }
           }
 

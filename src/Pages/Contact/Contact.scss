@@ -1,11 +1,16 @@
 @import "../../styles/Responsive.scss";
 
-.contactUs{
-    .heroSec{
-        margin-bottom: 3rem;
-    }
+.contactUs {
+  .heroSec {
+    margin-bottom: 3rem;
 
-    .map{
-        
+    img {
+      @include Mobile {
+        object-fit: cover;
+      }
     }
+  }
+
+  .map {
+  }
 }

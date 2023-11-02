@@ -3,6 +3,10 @@
 .about {
   p {
     font-size: 15px;
+
+    @include Tablet{
+      font-size: 13px;
+    }
   }
 
   .content {
@@ -17,6 +21,10 @@
       margin-bottom: 3rem;
       color: rgb(24, 154, 106);
       font-size: 30px;
+
+      @include Tablet{
+        font-size: 20px;
+      }
     }
 
     p {
@@ -28,6 +36,10 @@
         text-transform: uppercase;
         font-weight: bold;
         font-size: 14px;
+
+        @include Tablet{
+          font-size: 12px;
+        }
       }
     }
   }
@@ -45,6 +57,10 @@
       h2 {
         margin-bottom: 0.5rem;
         font-size: 20px;
+
+        @include Tablet{
+          font-size: 18px;
+        }
       }
     }
   }

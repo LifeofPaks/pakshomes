@@ -45,20 +45,32 @@ body{
 
   img {
     width: 30px;
+
+    @include Tablet {
+      width: 25px;
+    }
   }
 
   h1 {
     font-size: 16px;
-    margin-left: -.7rem;
+    margin-left: -0.8rem;
     text-transform: uppercase;
     color: #00d4ff;
     text-shadow: 0 0 2px black;
+
+    @include Tablet {
+      font-size: 14px;
+    }
 
     span {
       font-size: 22px;
       font-family: "MADE TOMMY Outline", sans-serif;
       color: #156295;
       text-shadow: none;
+
+      @include Tablet {
+        font-size: 18px;
+      }
     }
   }
 }
