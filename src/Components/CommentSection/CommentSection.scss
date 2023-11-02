@@ -11,6 +11,10 @@
     letter-spacing: 2px;
     font-size: 10px;
     font-weight: 600;
+
+    @include Tablet {
+      font-size: 8px;
+    }
   }
 
   .comTitle {
@@ -20,6 +24,10 @@
 
     img {
       width: 18px;
+
+      @include Tablet {
+        width: 14px;
+      }
     }
 
     .down {
@@ -39,6 +47,10 @@
       h4 {
         text-transform: uppercase;
         font-size: 12px;
+
+        @include Tablet {
+          font-size: 10px;
+        }
       }
     }
   }
@@ -64,6 +76,10 @@
       margin-bottom: 0.7rem;
       padding-top: 1rem;
       margin-top: 1rem;
+
+      @include Tablet {
+        font-size: 10px;
+      }
     }
 
     .profile {
@@ -81,6 +97,10 @@
 
       .name {
         font-size: 12px;
+
+        @include Tablet {
+          font-size: 10px;
+        }
       }
     }
     .time {
@@ -90,33 +110,40 @@
       padding-bottom: 1rem;
       border-bottom: 1px solid #ccc;
       margin-bottom: 1rem;
+
+      @include Tablet {
+        font-size: 8px;
+      }
     }
 
     .ac {
       background: #206ca0;
       color: #fff;
+
+      @include Tablet {
+        font-size: 7px;
+      }
     }
   }
 
   .addCom {
-      
-      height: 0;
-      visibility: hidden;
-      overflow: hidden;
-      opacity: 0;
-      transition: 0.3s;
-      
-      &.show {
-          height: 220px;
-          visibility: visible;
-          overflow: initial;
-          opacity: 1;
-        }
-        
-        .addComTitle {
-            margin-top: 1rem;
-            padding-top: 1rem;
-        border-top: 1px dashed #ccc;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s;
+
+    &.show {
+      height: 220px;
+      visibility: visible;
+      overflow: initial;
+      opacity: 1;
+    }
+
+    .addComTitle {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #ccc;
       display: flex;
       align-items: center;
       gap: 0.3rem;
@@ -124,17 +151,29 @@
 
       img {
         width: 18px;
+
+        @include Tablet {
+          width: 14px;
+        }
       }
 
       h4 {
         text-transform: uppercase;
         font-size: 12px;
+
+        @include Tablet {
+          font-size: 10px;
+        }
       }
     }
 
     p {
       font-size: 13px;
       margin-bottom: 0.3rem;
+
+      @include Tablet {
+        font-size: 10px;
+      }
     }
 
     textarea {
@@ -151,6 +190,10 @@
         font-family: inherit;
         color: #c0bdbd;
         letter-spacing: 1px;
+
+        @include Tablet {
+          font-size: 10px;
+        }
       }
     }
 
@@ -158,14 +201,23 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+
+    
+     
       .sb {
         background: rgb(244, 183, 31);
         color: #fff;
+          @include Tablet {
+        font-size: 7px;
+      }
       }
 
       .cc {
         background: #000;
         color: #fff;
+          @include Tablet {
+        font-size: 7px;
+      }
       }
     }
   }
