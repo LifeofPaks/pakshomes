@@ -7,6 +7,10 @@
   padding-inline: 1rem;
   padding-bottom: 2rem;
 
+  @include Tablet {
+    width: 350px;
+  }
+
   .agent {
     text-align: center;
     padding-block: 2rem;
@@ -20,10 +24,19 @@
       margin-bottom: 0.6rem;
 
       h1 {
-        font-size: 20px;
         text-transform: uppercase;
         font-size: 14px;
         letter-spacing: 1px;
+
+        @include Tablet {
+          font-size: 12px;
+        }
+      }
+
+      img {
+        @include Tablet {
+          width: 15px;
+        }
       }
     }
 
@@ -31,6 +44,10 @@
       font-weight: 500;
       color: #555;
       font-size: 13px;
+
+      @include Tablet {
+        font-size: 11px;
+      }
     }
 
     button {
@@ -48,145 +65,191 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       font-size: 10px;
+
+      @include Tablet {
+        font-size: 8px;
+      }
+    }
+
+    img {
+      @include Tablet {
+        width: 14px;
+      }
     }
   }
 
-  .reachOut{
+  .reachOut {
     padding-block: 1rem;
     display: flex;
     flex-direction: column;
 
+    h2 {
+      font-size: 16px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1rem;
 
-    h2{
-        font-size: 16px;
+      @include Tablet {
+        font-size: 14px;
+      }
+    }
+
+    .inputBox {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      border: 1px solid #ccc;
+      padding-inline: 1rem;
+      height: 45px;
+      margin-bottom: 0.5rem;
+
+      input {
         width: 100%;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
 
-    .inputBox{
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-        border: 1px solid #ccc;
-        padding-inline: 1rem;
-        height: 45px;
-        margin-bottom: .5rem;
+        &::placeholder {
+          color: #5555555c;
 
-        input{
-            width: 100%;
-
-            &::placeholder{
-                color: #5555555c;
-            }
+          @include Tablet {
+            font-size: 12px;
+          }
         }
+      }
     }
 
-    textarea{
-        width: 100%;
-        resize: none;
-        border: 1px solid #ccc;
-        margin-bottom: 1rem;
-        height: 200px;
-        padding: .5rem 1rem;
+    textarea {
+      width: 100%;
+      resize: none;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      height: 200px;
+      padding: 0.5rem 1rem;
 
-        &::placeholder{
-            color: #5555555c;
+      &::placeholder {
+        color: #5555555c;
+
+        @include Tablet {
+          font-size: 12px;
         }
+      }
     }
 
-    button{
-        text-transform: uppercase;
-        font-size: 11px;
-        letter-spacing: 2px;
-        background: rgb(244, 183, 31);;
-        height: 45px;
-        font-weight: bold;
-        margin-bottom: 1rem;
+    button {
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 2px;
+      background: rgb(244, 183, 31);
+      height: 45px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+
+      @include Tablet {
+        font-size: 10px;
+      }
     }
 
-    p{
-        font-size: 15px;
-        letter-spacing: 22;
+    p {
+      font-size: 15px;
+      letter-spacing: 22;
+
+      @include Tablet {
+        font-size: 12px;
+      }
     }
   }
 
-  .review{
+  .review {
     background: #fff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     padding: 1rem;
     border-top: 1px dashed #000;
     border-left: 3px solid #000;
 
-    .revTitle{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1rem;
+    .revTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
 
-        h3{
-            font-size: 18px;
-        }
+      h3 {
+        font-size: 18px;
 
-        img{
-            cursor: pointer;
+        @include Tablet {
+          font-size: 15px;
         }
+      }
+
+      img {
+        cursor: pointer;
+      }
     }
 
-    .revProfile{
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
+    .revProfile {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
 
-        img{
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .revLeft {
+        p {
+          font-size: 13px;
+
+          @include Tablet {
+            font-size: 11px;
+          }
         }
 
-        .revLeft{
-            p{
-                font-size: 13px;
-            }
+        .time {
+          margin-top: 0.3rem;
+          color: #777;
+          font-weight: 500;
+          font-size: 11px;
 
-            .time{
-                margin-top: 0.3rem;
-                color: #777;
-                font-weight: 500;
-                font-size: 11px;
-            }
+          @include Tablet {
+            font-size: 8px;
+          }
         }
-
-        
+      }
     }
 
-    .star{
-        margin-block: 1rem;
+    .star {
+      margin-block: 1rem;
     }
-
-  
   }
 
-  .added{
+  .added {
     margin-top: 2rem;
-    img{
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-    }
-    p{
-        font-size: 13px;
-        font-weight: bold;
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
 
-        span{
-            color: #555;
-            font-weight: normal;
-        }
+      @include Tablet {
+        width: 40px;
+        height: 40px;
+      }
     }
-}
+    p {
+      font-size: 13px;
+      font-weight: bold;
 
-.disc{
+      @include Tablet {
+        font-size: 11px;
+      }
+
+      span {
+        color: #555;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .disc {
     margin-top: 1rem;
     padding: 1rem;
     background: rgb(67, 151, 168);
@@ -194,10 +257,15 @@
     font-size: 14px;
     border-left: 4px solid #000;
 
-    p{
-        span{
-            font-weight: 600;
-        }
+    p {
+
+        @include Tablet {
+            font-size: 12px;
+          }
+
+      span {
+        font-weight: 600;
+      }
     }
-}
+  }
 }

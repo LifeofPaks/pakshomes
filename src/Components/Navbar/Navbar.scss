@@ -137,6 +137,11 @@
             left: -3rem;
           }
 
+          @include Mobile {
+            width: 140px;
+            padding: 14px;
+          }
+
           .act {
             gap: 0.7rem;
             display: flex;
@@ -168,6 +173,10 @@
 
             img {
               width: 18px;
+
+              @include Tablet {
+                width: 14px;
+              }
             }
 
             a {
@@ -175,6 +184,10 @@
               text-transform: uppercase;
               font-size: 11px;
               letter-spacing: 2px;
+
+              @include Tablet {
+font-size: 9px;
+              }
             }
           }
         }
