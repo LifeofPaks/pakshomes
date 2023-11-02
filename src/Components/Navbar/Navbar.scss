@@ -126,6 +126,10 @@
             @include Mini{
               left: -2rem;
           }
+
+          @include Tablet{
+            left: -3rem;
+        }
             
             .act{
                 gap: 0.7rem;

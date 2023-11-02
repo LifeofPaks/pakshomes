@@ -8,6 +8,10 @@
     gap: 2rem;
     color: #333;
 
+@include Tablet{
+    flex-direction: column;
+}
+
     .left, .right{
         width: 100%;
         background-color: #f3f2f2;
@@ -22,6 +26,10 @@
     }
 
     .left{
+
+        @include Tablet{
+height: 300px;
+        }
         p{
             margin-bottom: 0.5rem;
             line-height: 22px;

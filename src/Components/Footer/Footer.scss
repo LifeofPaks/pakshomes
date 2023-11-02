@@ -7,22 +7,24 @@
       rgba(117, 19, 93, 0.73)
     ),
     url("https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80");
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   color: #fff;
 
-
   .container {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: #00000054;
     padding: 4rem 8%;
     backdrop-filter: blur(2px);
 
-
     .heading {
       margin-bottom: 2rem;
       font-size: 26px;
+
+      @include Tablet {
+        font-size: 20px;
+      }
     }
 
     .top {
@@ -30,8 +32,13 @@
       padding-bottom: 2rem;
       border-bottom: 1px solid #ffffff59;
       margin-bottom: 3rem;
+
       img {
         width: 20px;
+
+        @include Tablet {
+          width: 16px;
+        }
       }
 
       .info {
@@ -42,6 +49,10 @@
 
         p {
           font-size: 14px;
+
+          @include Tablet {
+            font-size: 12px;
+          }
         }
       }
 
@@ -69,19 +80,38 @@
       padding-block: 2rem 3rem;
       margin-bottom: 3rem;
 
+      @include Tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include Mobile {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
       .col {
         width: 300px;
+
+
         .title {
           text-transform: uppercase;
           font-size: 14px;
           letter-spacing: 2px;
           margin-bottom: 1rem;
           font-weight: bold;
+
+          @include Tablet {
+            font-size: 12px;
+          }
         }
 
         p {
           font-size: 14px;
           line-height: 25px;
+
+          @include Tablet {
+            font-size: 12px;
+          }
         }
 
         li {
@@ -90,6 +120,10 @@
           margin-bottom: 0.8rem;
           text-transform: uppercase;
           letter-spacing: 2px;
+
+          @include Tablet {
+            font-size: 10px;
+          }
 
           &:not(:first-child) {
             cursor: pointer;
@@ -113,6 +147,10 @@
       font-size: 12px;
       padding-top: 3rem;
       border-top: 1px solid #ffffff59;
+
+      @include Tablet {
+        font-size: 10px;
+      }
     }
   }
 }

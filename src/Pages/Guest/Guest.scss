@@ -1,215 +1,218 @@
-@import '../../styles/Responsive.scss';
+@import "../../styles/Responsive.scss";
 
-.guestPage{
-    margin-bottom: 2rem;
+.guestPage {
+  margin-bottom: 2rem;
 
-.guestContainer{
+  .guestContainer {
     display: flex;
     align-items: flex-start;
     padding-top: 6rem;
     gap: 3rem;
 
-    .guestInfo{
-        padding-inline: 8%;
-        margin-bottom: 1rem;
-        width: 60%;
+    .guestInfo {
+      padding-inline: 8%;
+      margin-bottom: 1rem;
+      width: 60%;
 
-        form{
-            display: flex;
-            flex-direction: column;
-            width: 370px;
-             
+      @include Mini {
+        padding-inline: 3rem;
+        width: 50%;
+      }
 
-            label{
-                margin-bottom: 0.5rem;
-                font-size: 13px;
-            }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 370px;
 
-            input{
-                height: 35px;
-                border: 1px solid #ccc;
-                margin-bottom: 0.9rem;
-                padding-left: 1rem;
-            }
-
-            button{
-                margin-top: 1rem;
-                height: 35px;
-                font-size: 10px;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                font-weight: bold;
-                background: gold;
-            }
+        label {
+          margin-bottom: 0.5rem;
+          font-size: 13px;
         }
 
-        .guestDisplayInfo{
-            padding: 2rem;
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-            width: 370px;
-            border-radius: .5rem;
-            background: gold;
-            opacity: 0;
-            animation: fadeIn 2s 1s forwards;
-            p{
-                text-transform: uppercase;
-                font-size: 13px;
-                font-weight: bold;
-                margin-bottom: 1rem;
-
-                span{
-                    text-transform: capitalize;
-                    font-weight: normal;
-                    margin-left: 0.2rem;
-                }
-            }
+        input {
+          height: 35px;
+          border: 1px solid #ccc;
+          margin-bottom: 0.9rem;
+          padding-left: 1rem;
         }
 
-        .mayLike{
-           
-            margin-top: 3rem;
-            h2{
-                margin-bottom: 1rem;
-                font-size: 18px;
-            }
-            .content{
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-
-                .card{
-                    width: 200px;
-
-
-                    .cardImage{
-                        height: 200px;
-                    }
-
-                    .details{
-                        padding: .7rem;
-                
-                        .title{
-                
-                            h4{
-                                font-weight: 500;
-                                font-size: 8px;
-                            }
-                
-                            img{
-                                width: 14px;
-                                cursor: pointer;
-                            }
-                        }
-                
-                        .location{
-                            font-size: 10px;
-                
-                            span{
-                                font-size: 10px;
-                            }
-                
-                            img{
-                                width: 10px;
-                            }
-                
-                        }
-                
-                        h3{
-                            color: #444;
-                            font-size: 10px;
-                        }
-                
-                     
-                    }
-
-                    .view{
-                        top: .7rem;
-                        left: .7rem;
-                        padding: 2px;
-                
-                        img{
-                            width: 10px;
-                        }
-                
-                        span{
-                            font-size: 10px;
-                        }
-                    }
-
-                    .status{
-                        top: .7rem;
-                        right: .7rem;
-                        font-size: 7px;
-                        padding: 2px;
-                
-                    }
-
-                    .package{
-                        font-size: 7px;
-                        left: 7rem;
-                        background: #0707074b;
-                        color: #fff;
-                        top: 17rem;
-                      }
-                }
-
-            }
+        button {
+          margin-top: 1rem;
+          height: 35px;
+          font-size: 10px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: bold;
+          background: gold;
         }
+      }
 
-        .gitop {
-            margin-top: 3rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #ffffff59;
-            margin-bottom: 3rem;
-            background: #333333;
-            padding: 2rem;
-            color: gold;
-            width: 370px;
-            border-radius: .5rem;
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-            border-left: 10px solid gold;
+      .guestDisplayInfo {
+        padding: 2rem;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        width: 370px;
+        border-radius: 0.5rem;
+        background: gold;
+        opacity: 0;
+        animation: fadeIn 2s 1s forwards;
+        p {
+          text-transform: uppercase;
+          font-size: 13px;
+          font-weight: bold;
+          margin-bottom: 1rem;
 
-            h1{
-                margin-bottom: 1rem;
-                font-size: 20px;
-            }
+          span {
+            text-transform: capitalize;
+            font-weight: normal;
+            margin-left: 0.2rem;
+          }
+        }
+      }
 
-            img {
-              width: 16px;
-            }
-      
-            .info{
-              display: flex;
-              align-items: center;
-              gap: 1rem;
-              margin-bottom: 1rem;
-      
-              p{
-                  font-size: 13px;
-              }
-            }
-      
-            .socials{
-              display: flex;
-              align-items: center;
-              gap: 1rem;
-              margin-top: 2rem;
-      
-              img{
-                  transition: .3s;
-                  cursor: pointer;
-      
-                  &:hover{
-                      transform: translateY(-2px);
-                  }
-              }
-            }
-      
+      .mayLike {
+        margin-top: 3rem;
+        h2 {
+          margin-bottom: 1rem;
+          font-size: 18px;
+
+          @include Tablet {
+            display: none;
+          }
+        }
+        .content {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+
+          @include Mini {
+            grid-template-columns: repeat(2, 1fr);
           }
 
+          @include Tablet {
+            display: none;
+          }
 
+          .card {
+            width: 200px;
+
+            .cardImage {
+              height: 200px;
+            }
+
+            .details {
+              padding: 0.7rem;
+
+              .title {
+                h4 {
+                  font-weight: 500;
+                  font-size: 8px;
+                }
+
+                img {
+                  width: 14px;
+                  cursor: pointer;
+                }
+              }
+
+              .location {
+                font-size: 10px;
+
+                span {
+                  font-size: 10px;
+                }
+
+                img {
+                  width: 10px;
+                }
+              }
+
+              h3 {
+                color: #444;
+                font-size: 10px;
+              }
+            }
+
+            .view {
+              top: 0.7rem;
+              left: 0.7rem;
+              padding: 2px;
+
+              img {
+                width: 10px;
+              }
+
+              span {
+                font-size: 10px;
+              }
+            }
+
+            .status {
+              top: 0.7rem;
+              right: 0.7rem;
+              font-size: 7px;
+              padding: 2px;
+            }
+
+            .package {
+              font-size: 7px;
+              left: 7rem;
+              background: #0707074b;
+              color: #fff;
+              top: 17rem;
+            }
+          }
+        }
+      }
+
+      .gitop {
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #ffffff59;
+        margin-bottom: 3rem;
+        background: #333333;
+        padding: 2rem;
+        color: gold;
+        width: 370px;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        border-left: 10px solid gold;
+
+        h1 {
+          margin-bottom: 1rem;
+          font-size: 20px;
+        }
+
+        img {
+          width: 16px;
+        }
+
+        .info {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1rem;
+
+          p {
+            font-size: 13px;
+          }
+        }
+
+        .socials {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 2rem;
+
+          img {
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
     }
-
-}
-    
+  }
 }
