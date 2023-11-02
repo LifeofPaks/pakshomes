@@ -11,6 +11,10 @@
     width: 350px;
   }
 
+  @include Mobile {
+    margin-inline: auto;
+  }
+
   .agent {
     text-align: center;
     padding-block: 2rem;

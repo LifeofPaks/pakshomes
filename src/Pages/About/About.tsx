@@ -10,7 +10,7 @@ const About = () => {
       <Navbar />
 
       <div className="heroSec">
-        <img
+        <img className="aboutImg"
           src="https://images.unsplash.com/photo-1551783841-0271a5f7c868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2863&q=80"
           alt="hero-img"
         />
@@ -38,7 +38,7 @@ const About = () => {
           confident decision, and we will be there along the way.
         </p>
 
-        <img
+        <img className="aboutImg"
           src="https://images.unsplash.com/photo-1610558751153-154582773d89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2832&q=80"
           alt="img"
         />

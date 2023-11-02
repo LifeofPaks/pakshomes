@@ -10,6 +10,10 @@
             overflow-x: hidden;
         }
 
+        @include Mobile {
+padding: 2rem;
+          }
+
     }
 
     
@@ -53,6 +57,10 @@
                 overflow: hidden;
                 position: relative;
                 cursor: pointer;
+
+                @include Mobile {
+                    width: 100%;
+                  }
                 
                 &:hover{
                     .cardImage{

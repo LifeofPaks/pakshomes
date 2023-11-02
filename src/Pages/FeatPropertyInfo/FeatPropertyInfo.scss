@@ -23,6 +23,7 @@
     gap: 0.5rem;
     margin-bottom: 1rem;
 
+
     a {
       color: #333;
       text-transform: uppercase;
@@ -59,12 +60,20 @@
     align-items: flex-start;
     gap: 2rem;
 
+    @include Mobile {
+      flex-direction: column;
+          }
+
     .mainInfo {
       width: 800px;
 
       @include Mini {
         width: 500px;
       }
+
+      @include Mobile {
+width: 100%;
+            }
 
       .mainImg {
         width: 300px;

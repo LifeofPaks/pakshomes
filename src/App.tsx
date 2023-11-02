@@ -38,6 +38,8 @@ function App() {
   const [phoneErrMsg, setPhoneErrMsg] = useState("");
   const [passwordErrMsg, setPasswordErrMsg] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [showMenu, setShowMenu] = useState(false)
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -220,6 +222,8 @@ function App() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
+
+
   return (
     <div>
       <AppContext.Provider
@@ -257,6 +261,8 @@ function App() {
           login,
           scrollToTop,
           signedUp,
+          showMenu,
+          setShowMenu,
         }}
       >
         <Routes>

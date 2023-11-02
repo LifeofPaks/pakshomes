@@ -1,0 +1,43 @@
+.mobile {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 100vw;
+  top: 0;
+  background: #000;
+  z-index: 1000;
+  color: #fff;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: none;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .close {
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+  }
+
+  .mobNav {
+   padding-top: 3rem;
+   padding-left: 3rem;
+    li {
+        font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+        padding: .5rem;
+        font-weight: bold;
+
+    }
+  }
+}

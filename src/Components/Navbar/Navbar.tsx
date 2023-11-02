@@ -4,29 +4,39 @@ import "./Navbar.scss";
 import { AppContext } from "../../hooks/ContextApi";
 import { signOut } from "firebase/auth";
 import { auth } from "../../config/Firebase";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 const Navbar = () => {
   const [showCTA, setShowCTA] = useState(false);
-  const { asGuest, loggedIn, setAsGuest, isOnline, setIsOnline, setLoggedIn } =
-    useContext(AppContext);
+  const {
+    asGuest,
+    loggedIn,
+    setAsGuest,
+    isOnline,
+    setIsOnline,
+    setLoggedIn,
+    setShowMenu,
+    showMenu,
+  } = useContext(AppContext);
 
   const handleSwitchUser = () => {
     setAsGuest(false);
     setIsOnline(false);
-    setLoggedIn(false)
-    signOutUser()
+    setLoggedIn(false);
+    signOutUser();
   };
 
-  const signOutUser = ()=>{
-    signOut(auth).then(() =>{
-        console.log('sign out successful')
-        
-    }).catch((error) =>{
-        console.log(error)
-    })
-}
+  const signOutUser = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("sign out successful");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-const checkUser = asGuest ? 'gu' : loggedIn ? 'user' : ''
+  const checkUser = asGuest ? "gu" : loggedIn ? "user" : "";
 
   return (
     <nav className="navbar">
@@ -95,7 +105,9 @@ const checkUser = asGuest ? 'gu' : loggedIn ? 'user' : ''
                       src="https://img.icons8.com/material-rounded/48/333333/dashboard-layout.png"
                       alt="dashboard-layout"
                     />
-                    <Link to={asGuest ? '/guest' : loggedIn ? '/user' : '/'}>Dashboard</Link>
+                    <Link to={asGuest ? "/guest" : loggedIn ? "/user" : "/"}>
+                      Dashboard
+                    </Link>
                   </div>
 
                   <div className="hl"></div>
@@ -213,6 +225,19 @@ const checkUser = asGuest ? 'gu' : loggedIn ? 'user' : ''
             </NavLink>
           </li>
         </ul>
+
+        {!showMenu && (
+          <img
+            onClick={()=> setShowMenu(true)}
+            className="menu"
+            width="20"
+            height="20"
+            src="https://img.icons8.com/ios-filled/50/000000/menu--v1.png"
+            alt="menu--v1"
+          />
+        )}
+
+        <MobileMenu/>
       </section>
     </nav>
   );

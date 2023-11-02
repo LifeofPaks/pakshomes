@@ -186,7 +186,7 @@
               letter-spacing: 2px;
 
               @include Tablet {
-font-size: 9px;
+                font-size: 9px;
               }
             }
           }
@@ -201,8 +201,6 @@ font-size: 9px;
         @include Mobile {
           display: none;
         }
-
-        
 
         .vl {
           height: 18px;
@@ -254,6 +252,10 @@ font-size: 9px;
     justify-content: space-between;
     padding-inline: 8%;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    @include Mobile {
+      padding-block: 0.8rem;
+    }
 
     .logo {
       display: flex;
@@ -374,6 +376,15 @@ font-size: 9px;
             }
           }
         }
+      }
+    }
+
+    .menu {
+      display: none;
+      cursor: pointer;
+
+      @include Mobile {
+        display: block;
       }
     }
   }
