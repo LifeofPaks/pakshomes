@@ -65,10 +65,100 @@
             }
         }
 
+        .mayLike{
+           
+            margin-top: 3rem;
+            h2{
+                margin-bottom: 1rem;
+                font-size: 18px;
+            }
+            .content{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+
+                .card{
+                    width: 200px;
+
+
+                    .cardImage{
+                        height: 200px;
+                    }
+
+                    .details{
+                        padding: .7rem;
+                
+                        .title{
+                
+                            h4{
+                                font-weight: 500;
+                                font-size: 8px;
+                            }
+                
+                            img{
+                                width: 14px;
+                                cursor: pointer;
+                            }
+                        }
+                
+                        .location{
+                            font-size: 10px;
+                
+                            span{
+                                font-size: 10px;
+                            }
+                
+                            img{
+                                width: 10px;
+                            }
+                
+                        }
+                
+                        h3{
+                            color: #444;
+                            font-size: 10px;
+                        }
+                
+                     
+                    }
+
+                    .view{
+                        top: .7rem;
+                        left: .7rem;
+                        padding: 2px;
+                
+                        img{
+                            width: 10px;
+                        }
+                
+                        span{
+                            font-size: 10px;
+                        }
+                    }
+
+                    .status{
+                        top: .7rem;
+                        right: .7rem;
+                        font-size: 7px;
+                        padding: 2px;
+                
+                    }
+
+                    .package{
+                        font-size: 7px;
+                        left: 7rem;
+                        background: #0707074b;
+                        color: #fff;
+                        top: 17rem;
+                      }
+                }
+
+            }
+        }
+
         .gitop {
-            margin-top: 4rem;
-            width: 100%;
-            padding-bottom: 2rem;
+            margin-top: 3rem;
+            padding-bottom: 1rem;
             border-bottom: 1px solid #ffffff59;
             margin-bottom: 3rem;
             background: #333333;
@@ -81,10 +171,11 @@
 
             h1{
                 margin-bottom: 1rem;
+                font-size: 20px;
             }
 
             img {
-              width: 20px;
+              width: 16px;
             }
       
             .info{
@@ -94,7 +185,7 @@
               margin-bottom: 1rem;
       
               p{
-                  font-size: 14px;
+                  font-size: 13px;
               }
             }
       
@@ -115,6 +206,8 @@
             }
       
           }
+
+
     }
 
 }

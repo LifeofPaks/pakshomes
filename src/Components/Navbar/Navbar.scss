@@ -121,6 +121,11 @@
             visibility: hidden;
             transition: .3s;
             left: -.4rem;
+
+
+            @include Mini{
+              left: -2rem;
+          }
             
             .act{
                 gap: 0.7rem;

@@ -1,8 +1,11 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import "./Guest.scss";
+import '../../Components/Card/Card.scss'
 import Navbar from "../../Components/Navbar/Navbar";
 import Dashboard from "../../Components/Dashboard/Dashboard";
 import Aside from "../../Components/Aside/Aside";
+import { propertiesData } from "../../Data/Data";
+import Card from "../../Components/Card/Card";
 
 const Guest = () => {
   const [showInfo, setShowInfo] = useState<boolean>(false);
@@ -38,6 +41,8 @@ const Guest = () => {
       setShowInfo(true);
     }
   };
+
+  const mayLike = propertiesData.slice(0, 6);
 
   return (
     <div className="guestPage">
@@ -107,6 +112,15 @@ const Guest = () => {
               <button>Submit</button>
             </form>
           )}
+
+          <div className="mayLike">
+            <h2>Properties you may Like</h2>
+            <div className="content">
+              {mayLike.map((item) => (
+                <Card item={item} key={item.id}/>
+              ))}
+            </div>
+          </div>
 
           <div className="gitop">
             <h1 className="heading">Get in touch</h1>

@@ -11,6 +11,7 @@
   background-size: cover;
   color: #fff;
 
+
   .container {
     width: 100vw;
     height: 100vh;
@@ -18,9 +19,10 @@
     padding: 4rem 8%;
     backdrop-filter: blur(2px);
 
-    .heading{
-        margin-bottom: 2rem;
-        font-size: 26px;
+
+    .heading {
+      margin-bottom: 2rem;
+      font-size: 26px;
     }
 
     .top {
@@ -32,33 +34,32 @@
         width: 20px;
       }
 
-      .info{
+      .info {
         display: flex;
         align-items: center;
         gap: 1rem;
         margin-bottom: 1rem;
 
-        p{
-            font-size: 14px;
+        p {
+          font-size: 14px;
         }
       }
 
-      .socials{
+      .socials {
         display: flex;
         align-items: center;
         gap: 1rem;
         margin-top: 2rem;
 
-        img{
-            transition: .3s;
-            cursor: pointer;
+        img {
+          transition: 0.3s;
+          cursor: pointer;
 
-            &:hover{
-                transform: translateY(-2px);
-            }
+          &:hover {
+            transform: translateY(-2px);
+          }
         }
       }
-
     }
 
     .bottom {

@@ -4,6 +4,10 @@
     height: 700px;
     position: relative;
 
+    @include Mini{
+        
+    }
+
     .modal{
         position: absolute;
         left: 0;

@@ -42,6 +42,10 @@
 
     .mainInfo {
       width: 800px;
+
+      @include Mini {
+        width: 600px;
+      }
    
 
     .mainImg {
@@ -78,6 +82,10 @@
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
       align-items: center;
       justify-content: space-between;
+
+      @include Mini {
+        width: 600px;
+      }
       .left {
         h1 {
           text-transform: uppercase;

@@ -7,9 +7,19 @@
     height: 100vh;
     overflow: hidden;
 
+    @include Mini{
+
+    }
+
     .container{
         width: 50vh;
         margin: auto;
+
+        @include Mini {
+            padding-left: 2rem;
+          }
+
+        
         h1{
             color: #206ca0;
             font-size: 20px;
@@ -48,6 +58,7 @@
                 gap: 0.5rem;
                 height: 45px;
                 position: relative;
+
 
                 img{
                     width: 14px;
@@ -147,6 +158,10 @@
         .bg{
             width:700px;
             height: 100%;
+
+            @include Mini {
+                width: 600px;
+              }
         }
 
         .logo{
