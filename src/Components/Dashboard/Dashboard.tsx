@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './Dashboard.scss'
 import ProflieImage from '../ProflieImage/ProflieImage'
 

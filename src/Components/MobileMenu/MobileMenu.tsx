@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import  { useContext } from "react";
 import "./MobileMenu.scss";
 import { Link, NavLink } from "react-router-dom";
 import { AppContext } from "../../hooks/ContextApi";

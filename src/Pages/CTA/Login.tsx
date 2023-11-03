@@ -7,6 +7,7 @@ import Loader from "react-loaders";
 const Login = () => {
   const navigate = useNavigate();
 
+
   const {
     setAsGuest,
     setIsOnline,
@@ -65,10 +66,10 @@ const Login = () => {
           </div>
 
           <button>
-          {loggedIn ? <Loader type="ball-beat" /> : "Continue"}
+          {loggedIn ? <Loader  active type="ball-beat" /> : "Continue"}
           </button>
           <button type="button" onClick={handleGuestLogin} className="guest">
-            {asGuest ? <Loader type="ball-beat" /> : "Login as Guest"}
+            {asGuest ? <Loader type="ball-beat" active/> : "Login as Guest"}
           </button>
         </form>
 

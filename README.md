@@ -4,10 +4,12 @@
 
 - Select an apartment to see more details and also agent contact page. 
 
-- A comment section and review section as well
+- A comment section and review section as well.
 
-- There's a user sign up page, that allows a unique login details after registration
+- There's a user sign up page, that allows a unique login details after registration.
 
-- You can also sign up as guest without going through the registration process
+- You can also sign up as guest without going through the registration process.
 
-- After the login either as a unique user or as guest, you have access to user dashboard where you can provide user details and also property type. User is allowed to upload a profile picture
+- After the login either as a unique user or as guest, you have access to user dashboard where you can provide user details and also property type. User is allowed to upload a profile picture.
+
+- Responsive for all device types.

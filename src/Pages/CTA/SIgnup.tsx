@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import "./cta.scss";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../hooks/ContextApi";
@@ -108,7 +108,7 @@ const SIgnup = () => {
             </div>
 
             <button>
-              {signedUp ? <Loader type="ball-beat" /> : "Continue"}
+              {signedUp ? <Loader active type="ball-beat" /> : "Continue"}
             </button>
           </form>
 

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import { AppContext } from "../../hooks/ContextApi";
 import { signOut } from "firebase/auth";

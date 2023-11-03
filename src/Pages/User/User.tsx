@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import  { ChangeEvent, FormEvent, useState } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import Dashboard from "../../Components/Dashboard/Dashboard";
 import { propertiesData } from "../../Data/Data";
