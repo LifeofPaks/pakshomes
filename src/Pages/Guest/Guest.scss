@@ -2,6 +2,13 @@
 
 .guestPage {
   margin-bottom: 2rem;
+  margin-top: 8rem;
+
+ 
+  @include Mobile {
+    margin-top: 6.5rem;
+
+  }
 
   .guestContainer {
     display: flex;

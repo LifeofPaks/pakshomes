@@ -48,6 +48,10 @@
                         padding-block: .3rem;
                         font-size: 10px;
                       }
+
+                      @include Mobile{
+                        width: 300px;
+                      }
                 }
           
     

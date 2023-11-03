@@ -38,6 +38,8 @@ const Navbar = () => {
 
   const checkUser = asGuest ? "gu" : loggedIn ? "user" : "";
 
+
+
   return (
     <nav className="navbar">
       <section className="top">
