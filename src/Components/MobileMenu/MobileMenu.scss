@@ -40,4 +40,25 @@
 
     }
   }
+
+  .mCta{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    gap: 1rem;
+    
+    .mLink{
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .mBtn{
+      padding: .5rem;
+      background: gold;
+    }
+
+  }
 }

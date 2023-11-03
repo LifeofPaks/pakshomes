@@ -4,7 +4,14 @@ import { Link, NavLink } from "react-router-dom";
 import { AppContext } from "../../hooks/ContextApi";
 
 const MobileMenu = () => {
-  const { setShowMenu, showMenu } = useContext(AppContext);
+  const { setShowMenu, showMenu, setLoggedIn, setAsGuest } = useContext(AppContext);
+
+  const handleLogout = ()=>{
+  setLoggedIn(false)
+  setAsGuest(false)
+  setShowMenu(false)
+}
+
   return (
     <div className={`mobile ${showMenu ? "show" : ""}`}>
       <img
@@ -104,6 +111,11 @@ const MobileMenu = () => {
           </NavLink>
         </li>
       </ul>
+
+      <div className="mCta" onClick ={handleLogout} >
+        <Link  className="mLink" to='/login'>Log in</Link> <p>or</p>
+        <button  className="mBtn"><Link  className="mLink" to='/signup'>sign up</Link></button>
+      </div>
     </div>
   );
 };

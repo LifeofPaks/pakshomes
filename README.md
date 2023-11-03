@@ -1,27 +1,13 @@
-# React + TypeScript + Vite
+# PAKS HOMES REAL ESTATE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Showcases lists of apartments for rent, sale and shorlet.
 
-Currently, two official plugins are available:
+- Select an apartment to see more details and also agent contact page. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- A comment section and review section as well
 
-## Expanding the ESLint configuration
+- There's a user sign up page, that allows a unique login details after registration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- You can also sign up as guest without going through the registration process
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- After the login either as a unique user or as guest, you have access to user dashboard where you can provide user details and also property type. User is allowed to upload a profile picture

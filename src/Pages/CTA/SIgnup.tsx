@@ -23,98 +23,99 @@ const SIgnup = () => {
     phoneErrMsg,
     emailErrMsg,
     passwordErrMsg,
-    signedUp
+    signedUp,
   } = useContext(AppContext);
 
   return (
     <div className="signup ctaction">
       <div className="container">
-        <h1>Creat an account</h1>
-        {nameErr | emailErr | phoneErr | passwordErr ? (
-          <p className="errMsg">
-            {nameErr
-              ? nameErrMsg
-              : emailErr
-              ? emailErrMsg
-              : phoneErr
-              ? phoneErrMsg
-              : passwordErrMsg}
+        <div className="ctaWraps">
+          <h1>Creat an account</h1>
+          {nameErr | emailErr | phoneErr | passwordErr ? (
+            <p className="errMsg">
+              {nameErr
+                ? nameErrMsg
+                : emailErr
+                ? emailErrMsg
+                : phoneErr
+                ? phoneErrMsg
+                : passwordErrMsg}
+            </p>
+          ) : (
+            ""
+          )}
+
+          <form onSubmit={register}>
+            <label htmlFor="fname">Full Name</label>
+            <div className="inputWrapper">
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/cccccc/user--v1.png"
+                alt="user--v1"
+              />
+              <input
+                type="text"
+                placeholder="Full Name"
+                id="fname"
+                onChange={handleFullname}
+                name="name"
+                value={name}
+              />
+            </div>
+
+            <label htmlFor="fname">Phone Number</label>
+            <div className="inputWrapper">
+              <img
+                src="https://img.icons8.com/ios-filled/100/cccccc/phone.png"
+                alt="phone"
+              />
+              <input
+                type="text"
+                placeholder="Phone Number"
+                onChange={handlePhone}
+                name="phone"
+                value={phone}
+              />
+            </div>
+
+            <label htmlFor="fname">Email</label>
+            <div className="inputWrapper">
+              <img
+                src="https://img.icons8.com/ios-filled/100/cccccc/new-post.png"
+                alt="new-post"
+              />
+              <input
+                type="text"
+                placeholder="Email"
+                onChange={handleEmail}
+                name="email"
+                value={email}
+              />
+            </div>
+
+            <label htmlFor="fname">Password</label>
+            <div className="inputWrapper">
+              <img
+                src="https://img.icons8.com/ios-filled/100/cccccc/password.png"
+                alt="password"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                onChange={handlePassword}
+                name="password"
+                value={password}
+              />
+            </div>
+
+            <button>
+              {signedUp ? <Loader type="ball-beat" /> : "Continue"}
+            </button>
+          </form>
+
+          <p>
+            Own a Paks Homes account? <Link to="/login">Login</Link>
           </p>
-        ) : ''}
-        <form onSubmit={register}>
-          <label htmlFor="fname">Full Name</label>
-          <div className="inputWrapper">
-            <img
-              src="https://img.icons8.com/ios-glyphs/30/cccccc/user--v1.png"
-              alt="user--v1"
-            />
-            <input
-              type="text"
-              placeholder="Full Name"
-              id="fname"
-              onChange={handleFullname}
-              name="name"
-              value={name}
-            />
-
-          </div>
-
-          <label htmlFor="fname">Phone Number</label>
-          <div className="inputWrapper">
-            <img
-              src="https://img.icons8.com/ios-filled/100/cccccc/phone.png"
-              alt="phone"
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              onChange={handlePhone}
-              name="phone"
-              value={phone}
-            />
-
-          </div>
-
-          <label htmlFor="fname">Email</label>
-          <div className="inputWrapper">
-            <img
-              src="https://img.icons8.com/ios-filled/100/cccccc/new-post.png"
-              alt="new-post"
-            />
-            <input
-              type="text"
-              placeholder="Email"
-              onChange={handleEmail}
-              name="email"
-              value={email}
-            />
-
-          </div>
-
-          <label htmlFor="fname">Password</label>
-          <div className="inputWrapper">
-            <img
-              src="https://img.icons8.com/ios-filled/100/cccccc/password.png"
-              alt="password"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              onChange={handlePassword}
-              name="password"
-              value={password}
-            />
-
-          </div>
-
-          <button>
-          {signedUp ? <Loader type="ball-beat" /> : "Continue"}
-          </button>
-        </form>
-
-        <p>
-          Own a Paks Homes account? <Link to="/login">Login</Link>
-        </p>
+        </div>
       </div>
 
       <div className="exec">

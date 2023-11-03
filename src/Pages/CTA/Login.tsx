@@ -34,6 +34,9 @@ const Login = () => {
   return (
     <div className=" ctaction">
       <div className="container">
+
+        <div className="ctaWraps">
+
         <h1>log into your account</h1>
         {error && <p className="errMsg"> {errMsg}</p>}
 
@@ -72,6 +75,9 @@ const Login = () => {
         <p>
           Need a Paks Homes account? <Link to="/signup">Register</Link>
         </p>
+        </div>
+
+      
       </div>
 
       <div className="exec">
