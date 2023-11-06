@@ -1,4 +1,4 @@
-import  { ChangeEvent, FormEvent, useState } from "react";
+import  { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import "./Guest.scss";
 import '../../Components/Card/Card.scss'
 import Navbar from "../../Components/Navbar/Navbar";
@@ -9,7 +9,7 @@ import Card from "../../Components/Card/Card";
 
 const Guest = () => {
   const [showInfo, setShowInfo] = useState<boolean>(false);
-
+  
   const guestInit = {
     name: "",
     email: "",
@@ -41,6 +41,8 @@ const Guest = () => {
       setShowInfo(true);
     }
   };
+
+
 
   const mayLike = propertiesData.slice(0, 6);
 

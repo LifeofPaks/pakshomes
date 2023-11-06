@@ -20,10 +20,23 @@ import FeatPropertyInfo from "./Pages/FeatPropertyInfo/FeatPropertyInfo";
 import User from "./Pages/User/User";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+
+  // LOCAL STORAGE VARIABLES
+  const guestData =  localStorage.getItem("Guest")
+  const getAsGuestVal = JSON.parse(guestData!)
+
+  const isOnlineData =  localStorage.getItem("isOnline")
+  const getIsOnlineVal = JSON.parse(isOnlineData!)
+
+  const loggedInData =  localStorage.getItem("isOnline")
+  const getLoggedInData = JSON.parse(loggedInData!)
+
+
+
+  const [loggedIn, setLoggedIn] = useState(getLoggedInData);
   const [signedUp, setSignedUp] = useState(false);
-  const [asGuest, setAsGuest] = useState(false);
-  const [isOnline, setIsOnline] = useState(false);
+  const [asGuest, setAsGuest] = useState(getAsGuestVal);
+  const [isOnline, setIsOnline] = useState(getIsOnlineVal);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -42,17 +55,19 @@ function App() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const data = localStorage.getItem("Guest");
+// STORE VALUE LOCAL STORAGE
+useEffect(() => {
+  localStorage.setItem("Guest", JSON.stringify(asGuest));
+}, [asGuest]);
 
-    if (data) {
-      setAsGuest(JSON.parse(data));
-    }
-  }, []);
+useEffect(() => {
+  localStorage.setItem("isOnline", JSON.stringify(isOnline));
+}, [isOnline]);
 
-  useEffect(() => {
-    localStorage.setItem("Guest", JSON.stringify(asGuest));
-  }, [asGuest]);
+useEffect(() => {
+  localStorage.setItem("loggedIn", JSON.stringify(loggedIn));
+}, [loggedIn]);
+
 
   const handleFullname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
