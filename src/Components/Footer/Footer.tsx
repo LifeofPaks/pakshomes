@@ -9,7 +9,7 @@ const Footer = () => {
           <h1 className="heading">Get in touch</h1>
           <div className="info">
             <img
-              src="https://img.icons8.com/ios-filled/100/ffffff/apple-phone.png"
+              src="https://.icons8.com/ios-filled/100/ffffff/apple-phone.png"
               alt="apple-phone"
             />
             <p>Hotline: +234 81234567</p>

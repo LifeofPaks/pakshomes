@@ -106,6 +106,7 @@ const Login = () => {
           className="bg"
           src="https://i.pinimg.com/564x/1e/52/48/1e5248687d15a9727858396931d8bf31.jpg"
           alt="bgbg"
+          loading="lazy"
         />
       </div>
     </div>

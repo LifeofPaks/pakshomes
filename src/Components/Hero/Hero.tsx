@@ -25,7 +25,7 @@ const Hero = () => {
 
         </div>
       </div>
-      <img className="displayImage" src={currentPage.Img} alt="hero-img" />
+      <img className="displayImage" src={currentPage.Img} alt="hero-img" loading="lazy" />
     </div>
   );
 };
